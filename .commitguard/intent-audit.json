@@ -10852,6 +10852,1413 @@
           "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
         }
       ]
+    },
+    "3a9ce7434451c9eda31ad102f4c6da1b9d22e2f4": {
+      "intent": "Update the repository policy to make routine commit decisions autonomous, block incomplete or failed audits, escalate only indispensable human decisions, and prohibit fabricated human approval.",
+      "reviewed_by": "Automated diff and requirement audit; no human approval is claimed",
+      "commit_subject": "Document autonomous CommitGuard approval policy",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "CommitGuard should proceed autonomously when all required checks pass, block failed or incomplete audits, request human input only when indispensable, never misrepresent automated review as human approval, and fail safely when essential human input is unavailable."
+        }
+      ],
+      "file_reviews": {
+        "README.md": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The README's previous decision-gate wording could imply routine human approval. This change states the autonomous default, precise escalation conditions, fail-safe behavior, and the distinction between automated audit evidence and actual human approval."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "a",
+          "count": 14,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "A",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "accepting",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "accounted",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "accurately",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "actual",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "all",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "allow",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "ambiguous",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "an",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "analysis",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "and",
+          "count": 10,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "applicable",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "approval",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "approved",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "are",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "as",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Ask",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "attestation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "audit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "audit-record",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "auditable",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "authorization",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "automated",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Automated",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "automatically",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Automatically",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "automation",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "autonomous",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Autonomous",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "be",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "because",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "block",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Block",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "blocked",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "by",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "bypass",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "cannot",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "change",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "changed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "check",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "checker",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "checks",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "CI",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "commit",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "CommitGuard",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "complete",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "completeness",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "consistency",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "current",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "decide",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "decision",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "decisions",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "default",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "determine",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "deterministic",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "diff",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Do",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "documented",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "does",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "eliminate",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Escalate",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "escalation",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "every",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "evidence",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "exceptional",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "fabricate",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Fail",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "fails",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "field",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "fields",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "file",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "for",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "gate",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "general",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "generated",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "genuinely",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "green",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "human",
+          "count": 8,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Human",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "human-approval",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "identify",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "If",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "implement",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "imply",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "incomplete",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "indispensable",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "intent",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "intervention",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "is",
+          "count": 16,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "it",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Its",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "itself",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "justified",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "label",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "legitimately",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "made",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "making",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "manifest",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "manifest-backed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "material",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "merely",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "messages",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "minimize",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "missing",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "model",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "must",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "necessary",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "necessity",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "needed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Never",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "no",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "non-empty",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "not",
+          "count": 8,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "obtained",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "obtaining",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "occurrence",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "of",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "only",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "operating",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "or",
+          "count": 10,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "outside",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "oversight",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "pass",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "passes",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "person",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "policy",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "prerequisite",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Proceed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "product",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "proof",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "provide",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "questions",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "rationale",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "record",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "Record",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "reference",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "references",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "regression",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "reliable",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "remains",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "report",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "required",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "requirement",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "requirements",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "reserved",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "resolved",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "resolving",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "review",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "reviewed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "reviewed_by",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "reviewer",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "risk",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "routine",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "s",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "safely",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "safety",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "satisfactory",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "scope",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "silently",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "specific",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "status",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "stop",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "subjective",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "such",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "that",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "the",
+          "count": 9,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "The",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "to",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "treated",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "truthful",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "unavailable",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "uncertainty",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "unjustified",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "user",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "verified",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "verifies",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "what",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "when",
+          "count": 7,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "whether",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "word",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "added",
+          "token": "workflow",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "and",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "approval",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "approved",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "audit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "Block",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "commit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "diff",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "Do",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "if",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "is",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "not",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "passes",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "reviewed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "the",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        },
+        {
+          "direction": "removed",
+          "token": "until",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact occurrence documents the autonomous CommitGuard decision policy: proceed on complete passing evidence, block failures, and reserve human escalation for indispensable subjective judgment or authorization."
+        }
+      ]
     }
   }
 }
