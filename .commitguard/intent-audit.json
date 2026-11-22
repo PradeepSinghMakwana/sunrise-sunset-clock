@@ -7452,6 +7452,46 @@
         }
       },
       "word_reviews": []
+    },
+    "f8512cd11a0de2fbd01d9de91aca459fb5156dfd": {
+      "intent": "Attempt to align the widget hierarchy byte-count contract assertion with the implementation's single-backslash Kotlin raw-string regex; this intermediate edit was immediately corrected in the next commit because the Kotlin normal string needed escaped backslashes.",
+      "reviewed_by": "Assistant review of the exact intermediate diff and CI failure at WidgetResourceContractTest.kt:88; explicitly superseded by 2097c0ddc32b80a40b02bc8a49136b218ef53861",
+      "commit_subject": "Match widget hierarchy regex contract",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "The widget resource contract assertion must match the implementation's positive byte-count regex source exactly; the final corrected assertion is recorded in the immediately following commit."
+        }
+      ],
+      "file_reviews": {
+        "app/src/test/kotlin/com/sunrisesunset/clock/WidgetResourceContractTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "This first attempt changed the expected regex but failed to escape backslashes for a Kotlin normal string. It is retained in history and explicitly superseded by the next corrective commit; it does not represent the final intended source."
+        }
+      },
+      "word_reviews": []
+    },
+    "2097c0ddc32b80a40b02bc8a49136b218ef53861": {
+      "intent": "Correct the immediately preceding regex assertion attempt by escaping backslashes in the Kotlin normal string, so the test source contains the exact single-backslash regex used by the implementation's raw string.",
+      "reviewed_by": "Assistant review of the final test assertion against the implementation source and the immediately preceding correction diff; repository-owner review remains possible",
+      "commit_subject": "Escape regex source assertion correctly",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "The widget resource contract test must search for the implementation's exact raw-string regex source, with Kotlin string escaping producing single backslashes at runtime."
+        }
+      ],
+      "file_reviews": {
+        "app/src/test/kotlin/com/sunrisesunset/clock/WidgetResourceContractTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The previous assertion used illegal Kotlin normal-string escapes. Doubling the backslashes in the test literal makes it compile and makes the runtime search string match the implementation's raw-string regex exactly, preserving the positive byte-count contract."
+        }
+      },
+      "word_reviews": []
     }
   }
 }
