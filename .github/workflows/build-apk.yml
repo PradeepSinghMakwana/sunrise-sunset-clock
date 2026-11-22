@@ -114,3 +114,17 @@ jobs:
           name: Sunrise-Sunset-Clock-debug
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: warn
+
+  node-local-guard:
+    name: Node-only local guard regression suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify JavaScript syntax
+        run: for file in scripts/*.js; do node --check "$file"; done
+      - name: Verify Bash syntax
+        run: for file in scripts/*.sh; do bash -n "$file"; done
+      - name: Run Node regression suite
+        run: node --test scripts/*.test.js
+      - name: Verify app privacy boundary
+        run: node scripts/privacy-guard.js
