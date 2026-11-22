@@ -14,7 +14,9 @@ permissions:
   contents: read
 
 jobs:
-  shell-validation:
+  shell-validation:    needs: unit-tests
+    if: ${{ needs.unit-tests.result == 'success' }}
+
     name: Validate release scripts (no emulator)
     runs-on: ubuntu-latest
     steps:
@@ -57,7 +59,9 @@ jobs:
             app/build/reports/tests/testDebugUnitTest/
           if-no-files-found: warn
 
-  detekt:
+  detekt:    needs: shell-validation
+    if: ${{ needs.shell-validation.result == 'success' }}
+
     name: Detekt Kotlin static analysis
     runs-on: ubuntu-latest
     steps:
@@ -79,7 +83,9 @@ jobs:
           path: app/build/reports/detekt/
           if-no-files-found: warn
 
-  android-lint:
+  android-lint:    needs: detekt
+    if: ${{ needs.detekt.result == 'success' }}
+
     name: Android lint
     runs-on: ubuntu-latest
     steps:
@@ -103,7 +109,9 @@ jobs:
             app/build/reports/lint-results-debug.xml
           if-no-files-found: warn
 
-  apk-build:
+  apk-build:    needs: android-lint
+    if: ${{ needs.android-lint.result == 'success' }}
+
     name: Build debug APK
     runs-on: ubuntu-latest
     steps:
@@ -124,7 +132,9 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
 
-  android-13-ui-tests:
+  android-13-ui-tests:    needs: apk-build
+    if: ${{ needs.apk-build.result == 'success' }}
+
     name: Android 13 API 33 emulator UI and screenshot tests
     needs: unit-tests
     runs-on: ubuntu-latest
