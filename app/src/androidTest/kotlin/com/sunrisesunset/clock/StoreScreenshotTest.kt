@@ -159,9 +159,14 @@ class StoreScreenshotTest {
                 "do not drag the app-name text",
             widgetPreview
         )
-        stage("drag widget onto launcher", 5_000) {
+        // The preview itself is centered on this full-height picker. Dropping at
+        // 48% of the display height moves only a few pixels and leaves the gesture
+        // inside the preview; Launcher3 allocates a provisional widget ID but never
+        // places a host view. Drag well above the picker so it can collapse and the
+        // pointer reaches the actual workspace before release.
+        stage("drag widget onto launcher", 8_000) {
             widgetPreview!!.drag(
-                android.graphics.Point(device.displayWidth / 2, (device.displayHeight * 0.48).toInt()),
+                android.graphics.Point(device.displayWidth / 2, (device.displayHeight * 0.10).toInt()),
                 1_000)
         }
         waitForUiIdle(device, "UI idle")
