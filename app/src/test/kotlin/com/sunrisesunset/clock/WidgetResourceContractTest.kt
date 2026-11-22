@@ -82,7 +82,7 @@ class WidgetResourceContractTest {
         val source = File("src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt").readText()
         assertTrue(source.contains("/data/local/tmp/sunrise-sunset-ci"))
         assertTrue(source.contains("screencap -p"))
-        assertTrue(source.contains("\"cp ${sourceHierarchy.absolutePath} \$hierarchyPath\""))
+        assertTrue(source.contains("\"cp \${sourceHierarchy.absolutePath} \$hierarchyPath\""))
         assertTrue(source.contains("\"wc -c \$hierarchyPath\""))
         assertTrue(source.contains("device.dumpWindowHierarchy(file)"))
         assertTrue(source.contains("Regex(\"\"\"^\\\\s*[1-9]\\\\d*\\\\s+\"\"\")"))
