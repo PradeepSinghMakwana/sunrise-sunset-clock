@@ -33,6 +33,9 @@ else
   python3 scripts/commit_intent_audit.py --staged || fail "staged change lacks a complete intention/word audit"
 fi
 
+echo "[CommitGuard] Privacy boundary checks"
+python3 scripts/privacy_guard.py || fail "privacy boundary validation failed"
+
 echo "[CommitGuard] Shell syntax checks"
 shopt -s nullglob
 shell_files=(scripts/*.sh)

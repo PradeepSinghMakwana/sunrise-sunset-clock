@@ -33,11 +33,9 @@ Tap the widget to reopen setup.
 
 ## Privacy
 
-See the full [Privacy Policy](docs/PRIVACY_POLICY.md) for the data the app uses, how it is stored, and how optional bug reports are handled.
+See the full [Privacy Policy](docs/PRIVACY_POLICY.md).
 
-In brief, the installed app requests approximate location only. Coordinates are stored locally and used for offline sunrise/sunset calculations. The current app does not include analytics, advertising, account tracking, or automatic crash/bug-report uploads. It does not silently capture or transmit personal-device screenshots, logs, or bug reports.
-
-If an in-app bug-report feature is added, it must be opt-in and user initiated: the app will explain what the report contains, let the user inspect it and remove sensitive material, and ask for explicit confirmation before anything is shared. Diagnostic collection must not run invisibly in the background. The policy will be updated to match the implemented feature before it is released.
+**The app has no network permission and never uploads app data.** It does not send location, device identifiers, analytics, crash data, bug reports, screenshots, logs, or diagnostics to the developer or any server. There is no report-submission feature, and none will be added. The app also disables Android cloud backup and device-transfer backup so its locally stored location is not included in app backups. Approximate location is used only on-device for offline sunrise/sunset calculations.
 
 ## Solar times and time zones
 
