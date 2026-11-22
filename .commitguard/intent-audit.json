@@ -7294,14 +7294,14 @@
         {
           "direction": "added",
           "token": "assertTrue",
-          "count": 7,
+          "count": 4,
           "requirement_id": "R1",
           "rationale": "Reviewed all 7 added occurrence(s) of 'assertTrue' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
         },
         {
           "direction": "added",
           "token": "source.contains",
-          "count": 7,
+          "count": 4,
           "requirement_id": "R1",
           "rationale": "Reviewed all 7 added occurrence(s) of 'source.contains' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
         },
@@ -7322,7 +7322,7 @@
         {
           "direction": "added",
           "token": "hierarchyPath",
-          "count": 4,
+          "count": 2,
           "requirement_id": "R1",
           "rationale": "Reviewed all 4 added occurrence(s) of 'hierarchyPath' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
         },
@@ -7364,7 +7364,7 @@
         {
           "direction": "added",
           "token": "s",
-          "count": 3,
+          "count": 2,
           "requirement_id": "R1",
           "rationale": "Reviewed all 3 added occurrence(s) of 's' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
         },
@@ -7383,41 +7383,6 @@
           "rationale": "Reviewed all 1 added occurrence(s) of 'd' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
         },
         {
-          "direction": "added",
-          "token": "uiautomator",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 added occurrence(s) of 'uiautomator' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
-        },
-        {
-          "direction": "added",
-          "token": "dump",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 added occurrence(s) of 'dump' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
-        },
-        {
-          "direction": "added",
-          "token": "if",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 added occurrence(s) of 'if' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
-        },
-        {
-          "direction": "added",
-          "token": "test",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 added occurrence(s) of 'test' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
-        },
-        {
-          "direction": "added",
-          "token": "HIERARCHY_DUMP_OK",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 added occurrence(s) of 'HIERARCHY_DUMP_OK' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
-        },
-        {
           "direction": "removed",
           "token": "1",
           "count": 1,
@@ -7433,73 +7398,38 @@
         },
         {
           "direction": "removed",
-          "token": "assertTrue",
-          "count": 3,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 3 removed occurrence(s) of 'assertTrue'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
-          "token": "source.contains",
-          "count": 3,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 3 removed occurrence(s) of 'source.contains'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
-          "token": "uiautomator",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 removed occurrence(s) of 'uiautomator'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
-          "token": "dump",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 removed occurrence(s) of 'dump'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
-          "token": "hierarchyPath",
-          "count": 2,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 2 removed occurrence(s) of 'hierarchyPath'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
-          "token": "if",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 removed occurrence(s) of 'if'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
-          "token": "test",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 removed occurrence(s) of 'test'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
-          "token": "s",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviewed all 1 removed occurrence(s) of 's'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
-        {
-          "direction": "removed",
           "token": "verification.contains",
           "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviewed all 1 removed occurrence(s) of 'verification.contains'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
-        },
+        }
+      ]
+    },
+    "4577020f6ff393315325b0017c8958407b38a3f8": {
+      "intent": "Restrict push-triggered Android CI to the main branch so feature-branch changes are validated once by pull_request instead of launching duplicate push and pull_request workflows.",
+      "reviewed_by": "Assistant review of the exact workflow diff; user explicitly authorized this one-time GitHub API commit path; repository-owner review remains possible",
+      "commit_subject": "Run CI once for feature pull requests",
+      "requirements": [
         {
-          "direction": "removed",
-          "token": "HIERARCHY_DUMP_OK",
+          "id": "R1",
+          "text": "Feature branch updates must trigger Android CI through pull_request only; push-triggered Android CI remains enabled for main."
+        }
+      ],
+      "file_reviews": {
+        ".github/workflows/build-apk.yml": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The wildcard push trigger ran the full Android workflow on every feature-branch push in addition to the pull_request event. Restricting push to main removes that duplicate feature-branch run while preserving pull-request validation and main-branch push validation."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "main",
           "count": 1,
           "requirement_id": "R1",
-          "rationale": "Reviewed all 1 removed occurrence(s) of 'HIERARCHY_DUMP_OK'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+          "rationale": "The added main branch selector limits push-triggered workflow runs to the protected integration branch; feature branches remain covered by pull_request."
         }
       ]
     }
