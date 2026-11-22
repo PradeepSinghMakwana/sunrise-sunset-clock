@@ -12,11 +12,10 @@ concurrency:
 
 permissions:
   contents: read
+  actions: write
 
 jobs:
-  shell-validation:    needs: unit-tests
-    if: ${{ needs.unit-tests.result == 'success' }}
-
+  shell-validation:
     name: Validate release scripts (no emulator)
     runs-on: ubuntu-latest
     steps:
@@ -27,9 +26,18 @@ jobs:
         run: python3 scripts/check_python_references.py
       - name: Run regression test suite
         run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Cancel remaining parallel jobs on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/cancel"
 
   unit-tests:
-    name: JVM unit tests
+    name: JVM unit tests and CommitGuard
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,10 +66,17 @@ jobs:
             app/build/test-results/testDebugUnitTest/
             app/build/reports/tests/testDebugUnitTest/
           if-no-files-found: warn
+      - name: Cancel remaining parallel jobs on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/cancel"
 
-  detekt:    needs: shell-validation
-    if: ${{ needs.shell-validation.result == 'success' }}
-
+  detekt:
     name: Detekt Kotlin static analysis
     runs-on: ubuntu-latest
     steps:
@@ -82,10 +97,17 @@ jobs:
           name: Detekt-reports
           path: app/build/reports/detekt/
           if-no-files-found: warn
+      - name: Cancel remaining parallel jobs on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/cancel"
 
-  android-lint:    needs: detekt
-    if: ${{ needs.detekt.result == 'success' }}
-
+  android-lint:
     name: Android lint
     runs-on: ubuntu-latest
     steps:
@@ -108,10 +130,17 @@ jobs:
             app/build/reports/lint-results-debug.html
             app/build/reports/lint-results-debug.xml
           if-no-files-found: warn
+      - name: Cancel remaining parallel jobs on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/cancel"
 
-  apk-build:    needs: android-lint
-    if: ${{ needs.android-lint.result == 'success' }}
-
+  apk-build:
     name: Build debug APK
     runs-on: ubuntu-latest
     steps:
@@ -131,12 +160,18 @@ jobs:
           name: Sunrise-Sunset-Clock-debug
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+      - name: Cancel remaining parallel jobs on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/cancel"
 
-  android-13-ui-tests:    needs: apk-build
-    if: ${{ needs.apk-build.result == 'success' }}
-
+  android-13-ui-tests:
     name: Android 13 API 33 emulator UI and screenshot tests
-    needs: unit-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -175,3 +210,12 @@ jobs:
             app/build/reports/androidTests/connected/debug/
             app/build/outputs/androidTest-results/connected/debug/
           if-no-files-found: warn
+      - name: Cancel remaining parallel jobs on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/cancel"
