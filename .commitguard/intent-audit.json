@@ -6474,6 +6474,803 @@
           "rationale": "Reviewed the single removed timeout literal: it was the failing 3-second deadline for hierarchy verification, replaced under R1."
         }
       ]
+    },
+    "3a5a5b446e7fe14bde6145fa3f0efd477b763e07": {
+      "intent": "Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count.",
+      "reviewed_by": "Assistant review of the exact GitHub patch and Android 13 instrumentation logcat showing duplicate UiAutomation registration; repository-owner review remains possible",
+      "commit_subject": "Reuse instrumentation hierarchy for shell evidence",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Export each non-empty hierarchy captured by UiDevice into shell-owned evidence storage without starting a second uiautomator UiAutomation service, and verify the copied file is non-empty."
+        }
+      ],
+      "file_reviews": {
+        "app/src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The CI log proves uiautomator dump crashes because instrumentation already registered UiAutomation, and the old if command is not executable through UiDevice.executeShellCommand. Reusing the already captured hierarchy avoids the conflicting service and preserves shell-owned post-test evidence."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "1-9",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of '1-9' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "Launching",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'Launching' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "Regex",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'Regex' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "Reuse",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'Reuse' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "UiAutomation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'UiAutomation' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "UiAutomationService",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'UiAutomationService' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "UiAutomator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'UiAutomator' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "UiDevice",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'UiDevice' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "Verification",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'Verification' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "a",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'a' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "above",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'above' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "already",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'already' (2) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "and",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'and' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "by",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'by' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "c",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'c' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "captured",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'captured' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "containsMatchIn",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'containsMatchIn' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "context",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'context' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "copy",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'copy' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "cp",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'cp' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "crashes",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'crashes' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "d",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'd' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "for",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'for' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "hierarchy",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'hierarchy' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "hierarchyFile",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'hierarchyFile' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "instrumentation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'instrumentation' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "it",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'it' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "name",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'name' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "name.xml",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'name.xml' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "owns",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'owns' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "post-test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'post-test' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "process",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'process' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "pull",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'pull' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "registered",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'registered' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "s",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 's' (2) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "second",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'second' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "service",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'service' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "sourceHierarchy",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'sourceHierarchy' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "sourceHierarchy.absolutePath",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'sourceHierarchy.absolutePath' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "the",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'the' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "wc",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'wc' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "added",
+          "token": "with",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'with' (1) in 3a5a5b4; it implements the recorded hierarchy-evidence correction: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "1",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of '1' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "13",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of '13' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "2",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of '2' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "Android",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'Android' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "App-specific",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'App-specific' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "HIERARCHY_DUMP_OK",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'HIERARCHY_DUMP_OK' (2) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "Run",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'Run' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "UID",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'UID' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "as",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'as' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "by",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'by' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "directly",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'directly' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "dump",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'dump' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "dumpResult",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'dumpResult' (2) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "echo",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'echo' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "else",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'else' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "evidenceDirectory",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'evidenceDirectory' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "external",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'external' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "fi",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'fi' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "if",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'if' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "is",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'is' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "l",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'l' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "ls",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'ls' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "not",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'not' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "on",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'on' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "output",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'output' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "readable",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'readable' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "reliably",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'reliably' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "s",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 's' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "shell",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'shell' (2) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "storage",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'storage' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'test' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "then",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'then' (1) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        },
+        {
+          "direction": "removed",
+          "token": "uiautomator",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'uiautomator' (2) in 3a5a5b4; it replaces the obsolete hierarchy-evidence behavior: Reuse UiDevice's existing instrumentation hierarchy instead of launching a conflicting uiautomator process; copy the captured non-empty XML into shell-owned storage and verify its byte count."
+        }
+      ]
+    },
+    "4c6793f1b9bcb553667d85a5a0eed4682938b015": {
+      "intent": "Correct the byte-count validation regex so it matches whitespace and decimal digits in wc output, while retaining the positive byte-count and filename checks.",
+      "reviewed_by": "Assistant review of the exact one-line GitHub diff and the CommitGuard REQUIRED_AUDIT diagnostic; repository-owner review remains possible",
+      "commit_subject": "Correct hierarchy byte-count validation",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Match the wc byte-count output correctly using whitespace and digit regex tokens, preserving the non-empty hierarchy and filename checks."
+        }
+      ],
+      "file_reviews": {
+        "app/src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The preceding API commit escaped regex metacharacters incorrectly inside a Kotlin raw string. This one-line correction makes the positive byte-count assertion match actual wc output."
+        }
+      },
+      "word_reviews": []
+    },
+    "226671c9255117054c1d6f222cc5ca8c913d6907": {
+      "intent": "Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation.",
+      "reviewed_by": "Assistant review of the exact GitHub patch and the failing Python regression assertion in CI run 466; repository-owner review remains possible",
+      "commit_subject": "Test instrumentation-safe hierarchy evidence export",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Keep the runner regression test aligned with the new UiDevice hierarchy reuse, shell copy, and byte-count verification implementation; ensure the obsolete conflicting dump and shell-if commands are not reintroduced."
+        }
+      ],
+      "file_reviews": {
+        "scripts/test_android_ui_test_runner.py": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The prior regression test asserted the exact obsolete uiautomator dump and if-test commands, so it rejected the corrected implementation. The test must assert the new copy/verification contract and forbid both broken commands."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "c",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'c' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "cp",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'cp' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "device.dumpWindowHierarchy",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'device.dumpWindowHierarchy' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "dump",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'dump' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "file",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'file' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "hierarchyPath",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'hierarchyPath' (3) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "screenshot_test",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'screenshot_test' (6) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "self.assertIn",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'self.assertIn' (2) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "self.assertNotIn",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'self.assertNotIn' (2) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "sourceHierarchy.absolutePath",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'sourceHierarchy.absolutePath' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "uiautomator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'uiautomator' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "added",
+          "token": "wc",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of 'wc' (1) in 226671c; it implements the recorded hierarchy-evidence correction: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "1",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of '1' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "2",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of '2' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "ROOT",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'ROOT' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "StoreScreenshotTest.kt",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'StoreScreenshotTest.kt' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "androidTest",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'androidTest' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "app",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'app' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "clock",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'clock' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "com",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'com' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "dump",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'dump' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "encoding",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'encoding' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "hierarchyPath",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'hierarchyPath' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "kotlin",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'kotlin' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "read_text",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'read_text' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "self.assertIn",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'self.assertIn' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "src",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'src' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "sunrisesunset",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'sunrisesunset' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "uiautomator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'uiautomator' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "utf-8",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of 'utf-8' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
+        }
+      ]
     }
   }
 }
