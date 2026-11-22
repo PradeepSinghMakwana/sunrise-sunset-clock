@@ -183,7 +183,7 @@ class StoreScreenshotTest {
         assertTrue("Calculated drag distance $dragDistance px does not exceed touch slop ${touchSlop}px; preview=$previewBounds workspace=$workspaceBounds", dragDistance > touchSlop * 2)
         writeDeviceDiagnostics(context, device, launcherPackage, workspaceBounds, previewBounds,
             "start=($startX,$startY), destination=($destinationX,$destinationY), distance_px=$dragDistance, touch_slop_px=$touchSlop, duration_ms=1000")
-        stage("drag widget onto launcher", 8_000) { widgetPreview.drag(android.graphics.Point(destinationX, destinationY), 1_000) }
+        stage("drag widget onto launcher", 8_000) { widgetPreview!!.drag(android.graphics.Point(destinationX, destinationY), 1_000) }
         waitForUiIdle(device, "UI idle")
         stage("settle screen", 2_000) { Thread.sleep(250) }
         captureCheckpoint(device, context, "08-widget-after-placement")
