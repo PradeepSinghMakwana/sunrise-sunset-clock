@@ -8774,13 +8774,6 @@
         },
         {
           "direction": "added",
-          "token": "3_000",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "added",
           "token": "8_000",
           "count": 1,
           "requirement_id": "R1",
@@ -8823,13 +8816,6 @@
         },
         {
           "direction": "added",
-          "token": "Widget",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "added",
           "token": "appEntry",
           "count": 1,
           "requirement_id": "R1",
@@ -8845,7 +8831,7 @@
         {
           "direction": "added",
           "token": "assertTrue",
-          "count": 8,
+          "count": 5,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         },
@@ -8879,28 +8865,7 @@
         },
         {
           "direction": "added",
-          "token": "fun",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "added",
           "token": "no",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "added",
-          "token": "picker",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "added",
-          "token": "query",
           "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
@@ -8915,7 +8880,7 @@
         {
           "direction": "added",
           "token": "row",
-          "count": 3,
+          "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         },
@@ -8936,14 +8901,14 @@
         {
           "direction": "added",
           "token": "source.contains",
-          "count": 8,
+          "count": 5,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         },
         {
           "direction": "added",
           "token": "stage",
-          "count": 2,
+          "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         },
@@ -8971,7 +8936,7 @@
         {
           "direction": "added",
           "token": "widget",
-          "count": 2,
+          "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         },
@@ -8998,22 +8963,8 @@
         },
         {
           "direction": "removed",
-          "token": "3_000",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
-          "token": "Widget",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
           "token": "assertTrue",
-          "count": 4,
+          "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         },
@@ -9054,21 +9005,7 @@
         },
         {
           "direction": "removed",
-          "token": "fun",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
           "token": "must",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
-          "token": "picker",
           "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
@@ -9077,20 +9014,6 @@
           "direction": "removed",
           "token": "pickerViewportBottom",
           "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
-          "token": "query",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
-          "token": "row",
-          "count": 2,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         },
@@ -9111,13 +9034,6 @@
         {
           "direction": "removed",
           "token": "source.contains",
-          "count": 4,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
-          "token": "stage",
           "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
@@ -9125,13 +9041,6 @@
         {
           "direction": "removed",
           "token": "visible",
-          "count": 1,
-          "requirement_id": "R1",
-          "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
-        },
-        {
-          "direction": "removed",
-          "token": "widget",
           "count": 1,
           "requirement_id": "R1",
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
