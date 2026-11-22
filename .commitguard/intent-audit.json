@@ -5788,6 +5788,657 @@
           "rationale": "Reviewed every removed occurrence of the exact token 'reacquire' (1) in this commit. It is necessary to implement or remove the described stage-deadline behavior: Distinguish the repeated widget-row lookup stage from final stale-object reacquisition so timeout diagnostics identify the exact operation."
         }
       ]
+    },
+    "442ffafd823c39026a5826176127496dd01c0306": {
+      "intent": "Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test.",
+      "reviewed_by": "Assistant review of the exact GitHub commit diff and CommitGuard REQUIRED_AUDIT word counts; repository-owner review remains possible",
+      "commit_subject": "Update widget row timeout contract assertion",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Keep the widget resource contract test aligned with the actual widget-row lookup and its bounded query stage."
+        }
+      ],
+      "file_reviews": {
+        "app/src/test/kotlin/com/sunrisesunset/clock/WidgetResourceContractTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The prior assertion expected the removed appEntry assignment. This change replaces that obsolete source assertion with checks for the named query stage and row lookup; the diff also contains a malformed newline insertion that the immediately following correction commit repairs."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "3_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token '3_000' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "added",
+          "token": "assertTrue",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'assertTrue' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "added",
+          "token": "n",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'n' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "added",
+          "token": "query",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'query' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "added",
+          "token": "row",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'row' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "added",
+          "token": "source.contains",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'source.contains' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "added",
+          "token": "stage",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'stage' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "added",
+          "token": "widget",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'widget' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        },
+        {
+          "direction": "removed",
+          "token": "appEntry",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'appEntry' (1) in this commit. Its occurrence is part of the recorded change: Update the widget resource contract test to assert the stage-based widget-row query timeout and direct row lookup used by the instrumented test."
+        }
+      ]
+    },
+    "084ac95de29ec7237982fb9e029cb8fb14a1c92b": {
+      "intent": "Repair the malformed widget resource contract test line introduced by the immediately preceding assertion update.",
+      "reviewed_by": "Assistant review of the exact GitHub commit diff and CommitGuard REQUIRED_AUDIT word counts; repository-owner review remains possible",
+      "commit_subject": "Fix malformed widget resource test line",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Keep the widget resource contract test syntactically valid while asserting the named query stage and widget-row lookup."
+        }
+      ],
+      "file_reviews": {
+        "app/src/test/kotlin/com/sunrisesunset/clock/WidgetResourceContractTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The previous commit embedded a literal escaped newline into a Kotlin assertion line. This correction restores two separate valid assertTrue statements, preserving both intended source-contract checks."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "removed",
+          "token": "n",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'n' (1) in this commit. Its occurrence is part of the recorded change: Repair the malformed widget resource contract test line introduced by the immediately preceding assertion update."
+        }
+      ]
+    },
+    "e553c0da0b57ae34d6f4f5a165b370deeed6f434": {
+      "intent": "Configure Gradle Test tasks to stop executing further tests after the first test failure.",
+      "reviewed_by": "Assistant review of the exact GitHub commit diff and CommitGuard REQUIRED_AUDIT word counts; repository-owner review remains possible",
+      "commit_subject": "Stop Gradle tests after first failure",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Fail fast within a Gradle test task so additional test work does not continue after the first failing test."
+        }
+      ],
+      "file_reviews": {
+        "app/build.gradle.kts": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The Test task type import and failFast configuration apply the requested early-stop behavior to configured Gradle test tasks without deleting or weakening tests."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "Test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'Test' (1) in this commit. Its occurrence is part of the recorded change: Configure Gradle Test tasks to stop executing further tests after the first test failure."
+        },
+        {
+          "direction": "added",
+          "token": "configureEach",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'configureEach' (1) in this commit. Its occurrence is part of the recorded change: Configure Gradle Test tasks to stop executing further tests after the first test failure."
+        },
+        {
+          "direction": "added",
+          "token": "failFast",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'failFast' (1) in this commit. Its occurrence is part of the recorded change: Configure Gradle Test tasks to stop executing further tests after the first test failure."
+        },
+        {
+          "direction": "added",
+          "token": "import",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'import' (1) in this commit. Its occurrence is part of the recorded change: Configure Gradle Test tasks to stop executing further tests after the first test failure."
+        },
+        {
+          "direction": "added",
+          "token": "org.gradle.api.tasks.testing.Test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'org.gradle.api.tasks.testing.Test' (1) in this commit. Its occurrence is part of the recorded change: Configure Gradle Test tasks to stop executing further tests after the first test failure."
+        },
+        {
+          "direction": "added",
+          "token": "tasks.withType",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'tasks.withType' (1) in this commit. Its occurrence is part of the recorded change: Configure Gradle Test tasks to stop executing further tests after the first test failure."
+        },
+        {
+          "direction": "added",
+          "token": "true",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'true' (1) in this commit. Its occurrence is part of the recorded change: Configure Gradle Test tasks to stop executing further tests after the first test failure."
+        }
+      ]
+    },
+    "96522720e47609a052a152d028e3e325735cf2ac": {
+      "intent": "Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel.",
+      "reviewed_by": "Assistant review of the exact GitHub commit diff and CommitGuard REQUIRED_AUDIT word counts; repository-owner review remains possible",
+      "commit_subject": "Gate CI jobs sequentially on prior success",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Keep independent CI jobs parallel and stop remaining parallel jobs when a job fails."
+        }
+      ],
+      "file_reviews": {
+        ".github/workflows/build-apk.yml": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "This commit's needs/if dependencies serialized independent jobs and therefore contradicted the requirement. It is explicitly documented as a rejected intermediate change, not an approved or necessary implementation; the next workflow commit removes these dependencies and restores parallel execution."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "android-lint",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'android-lint' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "apk-build",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'apk-build' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "detekt",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'detekt' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "if",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'if' (5) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "needs",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'needs' (5) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "needs.android-lint.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'needs.android-lint.result' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "needs.apk-build.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'needs.apk-build.result' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "needs.detekt.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'needs.detekt.result' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "needs.shell-validation.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'needs.shell-validation.result' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "needs.unit-tests.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'needs.unit-tests.result' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "shell-validation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'shell-validation' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "success",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'success' (5) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        },
+        {
+          "direction": "added",
+          "token": "unit-tests",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'unit-tests' (1) in this commit. Its occurrence is part of the recorded change: Record the intermediate attempt to chain CI jobs behind prior job success; this approach was incorrect for the user's requirement that independent CI jobs remain parallel."
+        }
+      ]
+    },
+    "f8a914065022b5735dbb5071eaed906704b1a6a0": {
+      "intent": "Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation.",
+      "reviewed_by": "Assistant review of the exact GitHub commit diff and CommitGuard REQUIRED_AUDIT word counts; repository-owner review remains possible",
+      "commit_subject": "Cancel parallel CI jobs on first failure",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Keep independent CI jobs parallel and stop remaining parallel jobs when a job fails, without misreporting cancelled jobs as successful."
+        }
+      ],
+      "file_reviews": {
+        ".github/workflows/build-apk.yml": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The workflow removes the preceding sequential needs/if dependencies, grants the workflow token the Actions write permission required for run cancellation, and adds a failure-only cancellation request to each independent job after its diagnostic upload step."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "Accept",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'Accept' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "Authorization",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'Authorization' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "Bearer",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'Bearer' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "Cancel",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'Cancel' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "CommitGuard",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'CommitGuard' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "GH_TOKEN",
+          "count": 12,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'GH_TOKEN' (12) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "GITHUB_API_URL",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'GITHUB_API_URL' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "GITHUB_REPOSITORY",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'GITHUB_REPOSITORY' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "GITHUB_RUN_ID",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'GITHUB_RUN_ID' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "H",
+          "count": 12,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'H' (12) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "POST",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'POST' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "X",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'X' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "actions",
+          "count": 7,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'actions' (7) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "and",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'and' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "application",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'application' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "cancel",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'cancel' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "curl",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'curl' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "env",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'env' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "fail",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'fail' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "failure",
+          "count": 12,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'failure' (12) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "github.token",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'github.token' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "if",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'if' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "jobs",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'jobs' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "json",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'json' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "name",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'name' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "on",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'on' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "parallel",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'parallel' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "remaining",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'remaining' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "repos",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'repos' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "run",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'run' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "runs",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'runs' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "show-error",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'show-error' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "silent",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'silent' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "vnd.github",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'vnd.github' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "added",
+          "token": "write",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every added occurrence of the exact token 'write' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "android-lint",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'android-lint' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "apk-build",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'apk-build' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "detekt",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'detekt' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "if",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'if' (5) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "needs",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'needs' (6) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "needs.android-lint.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'needs.android-lint.result' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "needs.apk-build.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'needs.apk-build.result' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "needs.detekt.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'needs.detekt.result' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "needs.shell-validation.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'needs.shell-validation.result' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "needs.unit-tests.result",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'needs.unit-tests.result' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "shell-validation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'shell-validation' (1) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "success",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'success' (5) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        },
+        {
+          "direction": "removed",
+          "token": "unit-tests",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed every removed occurrence of the exact token 'unit-tests' (2) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
+        }
+      ]
     }
   }
 }
