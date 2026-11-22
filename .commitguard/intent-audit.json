@@ -6439,6 +6439,41 @@
           "rationale": "Reviewed every removed occurrence of the exact token 'unit-tests' (2) in this commit. Its occurrence is part of the recorded change: Restore independent CI job execution and cancel the current workflow run when any parallel job fails, while retaining artifact-upload steps before cancellation."
         }
       ]
+    },
+    "c3fbf3347b872d1fdfab6de233c5b05213cc3d2d": {
+      "intent": "Increase only the shell hierarchy-file verification deadline from 3 seconds to 10 seconds after the preceding Android 13 UI-test run showed that this verification stage exceeded 3 seconds. Preserve the non-empty hierarchy assertion and all other independent stage deadlines.",
+      "reviewed_by": "Assistant review of the exact GitHub commit diff and CommitGuard REQUIRED_AUDIT diagnostic; repository-owner review remains possible",
+      "commit_subject": "Allow more time for hierarchy evidence verification",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "Allow Android 13 shell hierarchy evidence verification up to 10 seconds while preserving the non-empty file assertion and all other per-stage timeouts."
+        }
+      ],
+      "file_reviews": {
+        "app/src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The prior instrumented run reported this exact hierarchy-verification stage exceeding its 3-second deadline. Increasing only this verification deadline allows the shell filesystem check more time without weakening the required non-empty hierarchy assertion or changing unrelated stage deadlines."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "10_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed the single added timeout literal: it raises only the hierarchy verification stage's deadline to 10 seconds, as required by R1."
+        },
+        {
+          "direction": "removed",
+          "token": "3_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed the single removed timeout literal: it was the failing 3-second deadline for hierarchy verification, replaced under R1."
+        }
+      ]
     }
   }
 }
