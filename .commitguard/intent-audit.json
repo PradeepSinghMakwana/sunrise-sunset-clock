@@ -7432,6 +7432,26 @@
           "rationale": "The added main branch selector limits push-triggered workflow runs to the protected integration branch; feature branches remain covered by pull_request."
         }
       ]
+    },
+    "26f4be36a60829a9756b5db9ddf9135de02bc2e9": {
+      "intent": "Correct the widget resource contract test's Kotlin string so it checks the literal sourceHierarchy.absolutePath expression instead of interpolating an undefined test-scope variable.",
+      "reviewed_by": "Assistant review of the exact one-character source correction and CI compiler diagnostic at WidgetResourceContractTest.kt:85; repository-owner review remains possible",
+      "commit_subject": "Escape source interpolation in widget contract test",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "The contract test must compile and assert the literal source expression for copying the captured hierarchy file; it must not interpolate sourceHierarchy in the test process."
+        }
+      ],
+      "file_reviews": {
+        "app/src/test/kotlin/com/sunrisesunset/clock/WidgetResourceContractTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "CI failed compiling this test because the assertion interpolated sourceHierarchy, which is not defined in the test. Escaping the dollar sign makes the assertion inspect the intended literal source text while preserving the regression check."
+        }
+      },
+      "word_reviews": []
     }
   }
 }
