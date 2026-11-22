@@ -108,29 +108,34 @@ class StoreScreenshotTest {
         captureCheckpoint(device, context, "06-widget-picker-open")
 
         val widgetEntrySelector = By.textContains("Sunrise Sunset Clock")
-        var appEntry: UiObject2? = null
         val pickerViewportTop = (device.displayHeight * 0.18).toInt()
         val pickerViewportBottom = (device.displayHeight * 0.88).toInt()
-        // Launcher3 can expose a partially clipped row to UiAutomator. Keep
-        // scrolling until the title is actually inside the picker viewport; a
-        // click on a clipped row can hit another app/category or empty space.
-        stage("find fully visible widget row", 25_000) {
-        for (attempt in 0 until 12) {
-            appEntry = stage("query widget row", 3_000) { device.findObject(widgetEntrySelector) }
-            val bounds = appEntry?.visibleBounds
-            val fullyVisible = bounds != null && bounds.width() > 0 && bounds.height() > 0 &&
-                bounds.top >= pickerViewportTop && bounds.bottom <= pickerViewportBottom
-            if (fullyVisible) break
-            stage("scroll widget picker", 5_000) {
-                device.swipe(device.displayWidth / 2, (device.displayHeight * 0.78).toInt(),
-                    device.displayWidth / 2, (device.displayHeight * 0.30).toInt(), 35)
-            }
-            waitForUiIdle(device, "widget picker idle")
+
+        // Launcher3 sorts provider rows alphabetically. On a fresh emulator the
+        // app is below the initially visible Settings row, so blind swipes can
+        // leave the selector searching the same visible page. Filter the picker
+        // by the installed app label instead of relying on scroll gesture timing.
+        val widgetSearch = stage("find widget picker search", 5_000) {
+            device.wait(
+                Until.findObject(By.res("com.android.launcher3", "widgets_search_bar_edit_text")),
+                4_000
+            )
         }
+        assertNotNull("Launcher3 widget picker search field was not exposed", widgetSearch)
+        stage("filter widget picker", 5_000) {
+            widgetSearch!!.click()
+            widgetSearch.setText("Sunrise Sunset Clock")
+            device.pressEnter()
         }
-        // Reacquire after the final swipe: a UiObject2 can retain stale bounds.
-        appEntry = stage("reacquire widget row", 3_000) { device.findObject(widgetEntrySelector) }
-        assertNotNull("Widget picker did not list Sunrise Sunset Clock", appEntry)
+        waitForUiIdle(device, "filtered widget picker idle")
+
+        // Keep this as its own bounded stage. Do not wrap multiple independently
+        // timed UI operations in a shorter parent timeout: that cancels the
+        // search/scroll loop before its nested operation budgets can complete.
+        val appEntry: UiObject2? = stage("find fully visible widget row", 10_000) {
+            device.wait(Until.findObject(widgetEntrySelector), 8_000)
+        }
+        assertNotNull("Widget picker search returned no Sunrise Sunset Clock row", appEntry)
         val appEntryBounds = appEntry!!.visibleBounds
         assertTrue(
             "Widget picker row must be fully visible before selection: $appEntryBounds",
