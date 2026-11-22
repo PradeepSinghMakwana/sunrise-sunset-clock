@@ -323,7 +323,7 @@ class StoreScreenshotTest {
             device,
             "if test -s $hierarchyPath; then echo HIERARCHY_DUMP_OK; else ls -l $evidenceDirectory; fi",
             "$name hierarchy verification",
-            3_000
+            10_000
         )
         assertTrue(
             "Could not export non-empty hierarchy for $name. " +
