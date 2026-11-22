@@ -99,6 +99,32 @@ The counts below compare each named branch with `main` at the time this section 
 | `feature/solar-ui-test-parity` (no open PR at snapshot) | 11 ahead, 0 behind | Review the branch's UI-test changes, bring it up to date with `main`, run the relevant checks, and open or update a PR before integration. |
 
 **Important:** The queue is not a statement that any branch is already approved to merge. The current PR head, live comparison, conflict state, and latest CI results must be rechecked immediately before every integration. Merge one verified branch at a time, then use the resulting `main` as the base for the next branch.
+## CommitGuard: Local and Actual Testing Variants
+
+The repository must maintain two distinct CommitGuard variants with clearly separated responsibilities.
+
+### The important distinction
+
+| Requirement | Local variant | Actual Testing variant |
+|---|---|---|
+| When | Before commit | After commit / on PR |
+| What it examines | Staged changes | Actual committed changes |
+| Primary purpose | Prevent bad commits | Detect bad commits and broken software |
+| Android build and tests | Not required | Required |
+| GitHub Actions | No | Yes |
+
+Both variants should live in the repository, have clearly defined responsibilities, and share consistent requirements without duplicating or confusing their execution.
+
+### Local variant
+
+Runs before a commit. It examines the actual staged changes, checking intention, necessity, word occurrences, references, privacy, syntax, and regression requirements.
+
+### Actual Testing variant
+
+Runs after changes are committed or submitted in a pull request. It examines the actual committed changes and verifies the implementation through the required CI checks, including Android builds and tests.
+
+The Actual Testing variant must validate real committed changes and software behaviour. Merely checking the syntax of CommitGuard scripts or running their standalone Node tests does not constitute actual testing.
+
 ## Local Node.js CommitGuard
 
 Run the local pre-commit validation gate from the repository root before committing:
