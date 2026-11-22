@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.Test
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -58,6 +60,10 @@ dependencies {
 detekt {
     buildUponDefaultConfig = true
     allRules = false
+}
+
+tasks.withType<Test>().configureEach {
+    failFast = true
 }
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
