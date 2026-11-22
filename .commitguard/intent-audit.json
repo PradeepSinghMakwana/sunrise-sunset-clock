@@ -7492,6 +7492,1175 @@
         }
       },
       "word_reviews": []
+    },
+    "411ee1075795c3948c16da74b4efa2e9fd1aa5ec": {
+      "intent": "Fix the Android 13 widget-picker timeout by searching the picker for the installed app label instead of repeatedly querying and swiping within a shorter parent deadline.",
+      "reviewed_by": "Assistant review of the exact Android 13 failure evidence, captured widget-picker screenshot and hierarchy, and the test correction diff; CI must verify the behavior.",
+      "commit_subject": "Filter Android 13 widget picker before selecting provider",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "The Android 13 instrumented screenshot test must reliably locate the installed Sunrise Sunset Clock widget provider in Launcher3's alphabetically sorted widget picker without a parent timeout shorter than nested operations."
+        }
+      ],
+      "file_reviews": {
+        "app/src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The captured picker hierarchy showed the list at its alphabetical top through Settings, while the test's 25-second parent stage enclosed up to twelve nested 3-second queries, 5-second swipes, and 5-second idle waits. Filtering via the visible Launcher3 search field removes the fragile blind-scroll loop and gives each search and row lookup its own deadline."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "10_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "4_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "5_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "8_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "alphabetically",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "app",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "as",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "assertNotNull",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "before",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "below",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "blind",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "bounded",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "budgets",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "by",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "By.res",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "cancels",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "click",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Clock",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "com.android.launcher3",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "complete",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "device.pressEnter",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "device.wait",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Do",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "emulator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "exposed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "field",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "filter",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Filter",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "filtered",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "find",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "fresh",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "fully",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "gesture",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "in",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "independently",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "initially",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "installed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "instead",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "its",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Keep",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "label",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Launcher3",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "leave",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "loop",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "multiple",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "nested",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "no",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "not",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "of",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "on",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "On",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "operation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "operations",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "own",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "page",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "parent",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "picker",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "provider",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "relying",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "returned",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "row",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "rows",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "same",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "scroll",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "search",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "searching",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "selector",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Settings",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "shorter",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "so",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "sorts",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "stage",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Sunrise",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Sunset",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "swipes",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "that",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "the",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "this",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "timed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "timeout",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "timing",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "UI",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "UiObject2",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "Until.findObject",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "val",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "visible",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "was",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "widgets_search_bar_edit_text",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "widgetSearch",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "widgetSearch.setText",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "added",
+          "token": "wrap",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "0",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "0.30",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "0.78",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "12",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "2",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "25_000",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "3_000",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "35",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "a",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "actually",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "after",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "another",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "appEntry",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "attempt",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "bounds",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "bounds.bottom",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "bounds.height",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "bounds.top",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "bounds.width",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "break",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "can",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "category",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "click",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "clipped",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "device.displayHeight",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "device.displayWidth",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "device.findObject",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "device.swipe",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "did",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "empty",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "expose",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "final",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "for",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "fully",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "fullyVisible",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "hit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "if",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "in",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "inside",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "Keep",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "list",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "not",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "null",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "on",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "or",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "partially",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "picker",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "pickerViewportBottom",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "pickerViewportTop",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "query",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "reacquire",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "Reacquire",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "retain",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "row",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "scroll",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "scrolling",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "space",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "stage",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "stale",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "swipe",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "the",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "title",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "to",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "toInt",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "UiAutomator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "UiObject2",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "until",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "val",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "var",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "viewport",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "visible",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "visibleBounds",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        },
+        {
+          "direction": "removed",
+          "token": "widgetEntrySelector",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviews this exact changed token occurrence in the Android 13 widget-picker search and separately bounded row-detection correction."
+        }
+      ]
     }
   }
 }
