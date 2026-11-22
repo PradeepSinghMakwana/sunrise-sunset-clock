@@ -85,7 +85,7 @@ class WidgetResourceContractTest {
         assertTrue(source.contains("\"cp \${sourceHierarchy.absolutePath} \$hierarchyPath\""))
         assertTrue(source.contains("\"wc -c \$hierarchyPath\""))
         assertTrue(source.contains("device.dumpWindowHierarchy(file)"))
-        assertTrue(source.contains("Regex(\"\"\"^\\\\s*[1-9]\\\\d*\\\\s+\"\"\")"))
+        assertTrue(source.contains("Regex(\"\"\"^\s*[1-9]\d*\s+\"\"\")"))
         assertTrue(!source.contains("uiautomator dump \$hierarchyPath"))
         assertTrue(!source.contains("if test -s \$hierarchyPath"))
         assertTrue(!source.contains("HIERARCHY_DUMP_OK"))
