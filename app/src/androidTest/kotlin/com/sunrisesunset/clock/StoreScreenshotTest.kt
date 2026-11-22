@@ -316,19 +316,27 @@ class StoreScreenshotTest {
         val hierarchyPath = "$evidenceDirectory/$name.xml"
         shell(device, "mkdir -p $evidenceDirectory", "$name create evidence directory", 3_000)
         shell(device, "screencap -p $evidenceDirectory/$name.png", "$name shell screenshot", 5_000)
-        // Run uiautomator dump as the shell UID directly into shell-owned storage.
-        // App-specific external storage is not reliably readable by shell on Android 13.
-        val dumpResult = shell(device, "uiautomator dump $hierarchyPath 2>&1", "$name hierarchy export", 10_000)
+        // UiAutomator already owns the instrumentation UiAutomation service.
+        // Launching a second "uiautomator dump" process crashes with
+        // "UiAutomationService already registered". Reuse the hierarchy captured
+        // by UiDevice above and copy it into shell-owned storage for post-test pull.
+        val sourceHierarchy = hierarchyFile(context, name)
+        shell(
+            device,
+            "cp ${sourceHierarchy.absolutePath} $hierarchyPath",
+            "$name hierarchy export",
+            10_000
+        )
         val verification = shell(
             device,
-            "if test -s $hierarchyPath; then echo HIERARCHY_DUMP_OK; else ls -l $evidenceDirectory; fi",
+            "wc -c $hierarchyPath",
             "$name hierarchy verification",
             10_000
         )
         assertTrue(
-            "Could not export non-empty hierarchy for $name. " +
-                "uiautomator output: $dumpResult; verification: $verification",
-            verification.contains("HIERARCHY_DUMP_OK")
+            "Could not export non-empty hierarchy for $name. Verification: $verification",
+            Regex("""^\\s*[1-9]\\d*\\s+""").containsMatchIn(verification) &&
+                verification.contains("$name.xml")
         )
         shell(device, "dumpsys appwidget > $evidenceDirectory/$name-appwidget-dump.txt", "$name appwidget diagnostics", 10_000)
     }
