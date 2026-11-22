@@ -153,8 +153,12 @@ class AndroidUiTestRunnerTest(unittest.TestCase):
         self.assertIn("Gradle connected-test task uninstalls the target app", script)
         self.assertIn("android-13-screenshots/appwidget-dump-after-test-cleanup.txt", script)
         self.assertIn("required_hierarchies=(", script)
-        self.assertIn("uiautomator dump $hierarchyPath 2>&1", (ROOT / "app/src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt").read_text(encoding="utf-8"))
-        self.assertIn("if test -s $hierarchyPath", (ROOT / "app/src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt").read_text(encoding="utf-8"))
+        screenshot_test = (ROOT / "app/src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt").read_text(encoding="utf-8")
+        self.assertIn('"cp ${sourceHierarchy.absolutePath} $hierarchyPath"', screenshot_test)
+        self.assertIn('"wc -c $hierarchyPath"', screenshot_test)
+        self.assertIn("device.dumpWindowHierarchy(file)", screenshot_test)
+        self.assertNotIn("uiautomator dump $hierarchyPath", screenshot_test)
+        self.assertNotIn("if test -s $hierarchyPath", screenshot_test)
         self.assertIn("Missing or empty Android 13 UI hierarchy:", script)
 
     def test_runner_applies_and_verifies_generic_tall_phone_display(self):
