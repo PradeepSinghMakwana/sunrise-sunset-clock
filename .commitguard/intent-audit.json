@@ -9053,6 +9053,1805 @@
           "rationale": "Reviews each exact changed token occurrence in the JVM contract test that now enforces Launcher3 search filtering and a separately bounded widget-row lookup, replacing obsolete assertions for the removed scroll loop."
         }
       ]
+    },
+    "c44ec4c5aa9b17174c1c10603a25acc95264b451": {
+      "intent": "Correct stale README documentation to reflect the CommitGuard implementation already present on this branch, and remove inaccurate wording that implied its intention/necessity audit was not implemented.",
+      "reviewed_by": "Automated comparison of the exact GitHub commit patch against the requested README correction",
+      "commit_subject": "Correct stale CommitGuard implementation documentation",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "README must accurately describe the existing manifest-backed exact word-occurrence audit, changed-file necessity and requirement mapping, per-commit range validation, and current limits of reference checking; it must not call implemented intention auditing incomplete or imply human approval is a CommitGuard capability."
+        }
+      ],
+      "file_reviews": {
+        "README.md": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "The prior implementation-status paragraph contradicted the current audit code and incorrectly described human review as a required guard capability. Correcting it prevents contributors from relying on obsolete CommitGuard documentation."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "a",
+          "count": 8,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "actual",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "added",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "After",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "also",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "and",
+          "count": 10,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Android",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "any",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "API",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "are",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "as",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "attributes",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "audit",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "audited",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "be",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "boundaries",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "cannot",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "changed",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "changes",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "check",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "checked",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "checker",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "checks",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "CI",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "closed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "code",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "commit",
+          "count": 6,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "CommitGuard",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "commits",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "completeness",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "comprehensive",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "configuration",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "consistency",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "content",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "counts",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "cross-file",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Current",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "describe",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "diff",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "do",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Do",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "document",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "each",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "earlier",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "entries",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "essential",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "establish",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "every",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "exact",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "execute",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "explicit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "fail",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "fail-closed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "failing",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "file",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "follow-up",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "for",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "For",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "fresh",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "from",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Git",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "GitHub",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Gradle",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "guard",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "handled",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "has",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "hide",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "hooks",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "if",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "implementation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "implemented",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "imports",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "in",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "independently",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "individually",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "infer",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "intention",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "internal",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "invoked",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "is",
+          "count": 5,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "it",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "It",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "its",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "JVM",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Kotlin",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "later",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "local",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "manifest",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "manifest-backed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Manifest-only",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "matches",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "mismatched",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "missing",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "mode",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "must",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "narrower",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "necessity",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "net-zero",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "not",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "occurrence",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "of",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "or",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "output",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "per-commit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "precisely",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "Python",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "range",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "rationale",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "record",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "recorded",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "records",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "reference",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "references",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "regression",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "relationship",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "release",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "remaining",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "removed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "requirement",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "requirements",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "requires",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "resources",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "reviewed",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "runs",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "s",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "selected",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "separately",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "shell",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "so",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "stale",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "standard-library",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "stated",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "statically",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "subject",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "suite",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "symbols",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "syntax",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "task-grounded",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "tests",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "that",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "the",
+          "count": 13,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "The",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "therefore",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "these",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "These",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "they",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "through",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "together",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "truth",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "unaudited",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "unavailable",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "unit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "universal",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "unresolved",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "unstated",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "using",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "valid",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "validate",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "validates",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "validation",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "validator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "verifies",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "word",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "word-diff",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "word-token",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "workflow",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "added",
+          "token": "workflows",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact added occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "a",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "above",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "already",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "and",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "approval",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "are",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "as",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "audit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "Automated",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "be",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "by",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "cannot",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "capabilities",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "certainty",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "checks",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "claims",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "commit",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "CommitGuard",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "comprehensive",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "covered",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "cross-reference",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "current",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "currently",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "does",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "established",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "existing",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "explicit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "flag",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "for",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "from",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "fully",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "gates",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "guard",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "human",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "implement",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "Implementation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "implemented",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "infer",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "intent",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "intention",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "is",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "it",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "It",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "item",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "justified",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "JVM-test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "mark",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "matches",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "must",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "necessity",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "not",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "or",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "passing",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "post-commit",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "proof",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "provides",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "Python",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "rather",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "reference",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "regression",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "regression-test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "represented",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "required",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "review",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "run",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "s",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "script",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "selected",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "specification",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "status",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "syntax",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "task",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "tests",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "than",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "that",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "the",
+          "count": 7,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "them",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "These",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "unstated",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "Until",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "user",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "validation",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "verified",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "When",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "whitespace",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "with",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        },
+        {
+          "direction": "removed",
+          "token": "yet",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "This exact removed occurrence updates README.md to accurately describe the existing CommitGuard manifest-backed word audit, per-commit range validation, and the current limits of static reference checking."
+        }
+      ]
     }
   }
 }
