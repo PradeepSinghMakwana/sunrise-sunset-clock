@@ -73,7 +73,7 @@ class WidgetResourceContractTest {
         val source = File("src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt").readText()
         assertTrue(source.contains("bounds.bottom <= pickerViewportBottom"))
         assertTrue(source.contains("Widget picker row must be fully visible before selection"))
-        assertTrue(source.contains("appEntry = device.findObject(widgetEntrySelector)"))
+        assertTrue(source.contains("stage(\"query widget row\", 3_000)"))\n        assertTrue(source.contains("device.findObject(widgetEntrySelector)"))
     }
 
     @Test
