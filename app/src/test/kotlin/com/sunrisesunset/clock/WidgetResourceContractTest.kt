@@ -69,12 +69,16 @@ class WidgetResourceContractTest {
     }
 
     @Test
-    fun screenshotUiTestScrollsWidgetRowFullyIntoViewportBeforeTapping() {
+    fun screenshotUiTestFiltersWidgetPickerAndUsesBoundedRowLookup() {
         val source = File("src/androidTest/kotlin/com/sunrisesunset/clock/StoreScreenshotTest.kt").readText()
-        assertTrue(source.contains("bounds.bottom <= pickerViewportBottom"))
-        assertTrue(source.contains("Widget picker row must be fully visible before selection"))
-        assertTrue(source.contains("stage(\"query widget row\", 3_000)"))
-        assertTrue(source.contains("device.findObject(widgetEntrySelector)"))
+        assertTrue(source.contains("By.res(\"com.android.launcher3\", \"widgets_search_bar_edit_text\")"))
+        assertTrue(source.contains("widgetSearch.setText(\"Sunrise Sunset Clock\")"))
+        assertTrue(source.contains("device.pressEnter()"))
+        assertTrue(source.contains("stage(\"find fully visible widget row\", 10_000)"))
+        assertTrue(source.contains("Until.findObject(widgetEntrySelector), 8_000"))
+        assertTrue(source.contains("Widget picker search returned no Sunrise Sunset Clock row"))
+        assertTrue(source.contains("val appEntryBounds = appEntry!!.visibleBounds"))
+        assertTrue(!source.contains("stage(\"query widget row\", 3_000)"))
     }
 
     @Test
