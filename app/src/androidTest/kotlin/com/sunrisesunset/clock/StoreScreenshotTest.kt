@@ -335,7 +335,7 @@ class StoreScreenshotTest {
         )
         assertTrue(
             "Could not export non-empty hierarchy for $name. Verification: $verification",
-            Regex("""^\\s*[1-9]\\d*\\s+""").containsMatchIn(verification) &&
+            Regex("""^\s*[1-9]\d*\s+""").containsMatchIn(verification) &&
                 verification.contains("$name.xml")
         )
         shell(device, "dumpsys appwidget > $evidenceDirectory/$name-appwidget-dump.txt", "$name appwidget diagnostics", 10_000)
