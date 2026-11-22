@@ -1,0 +1,23 @@
+'use strict';
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const os=require('node:os');
+const path=require('node:path');
+const cp=require('node:child_process');
+const audit=require('./commit-intent-audit.js');
+const root=path.resolve(__dirname,'..');
+test('tokenization preserves punctuation-separated version tokens',()=>{assert.deepEqual(audit.tokenList('v2.3.4 beta-2'),['v2.3.4','beta-2']);});
+test('word diff parser counts additions and removals separately',()=>{const parsed=audit.parseWordDiff('@@ -1 +1 @@\n-oldName\n+newName\n');assert.equal(parsed.get('removed\0oldName'),1);assert.equal(parsed.get('added\0newName'),1);});
+test('word audit fails on unreviewed occurrence',()=>{const errors=[];audit.reviewWords(new Map([['added\0feature',2]]),[{direction:'added',token:'feature',count:1,requirement_id:'r1',rationale:'documented'}],errors,'review',new Set(['r1']));assert.ok(errors.some(e=>e.includes('diff has 2 occurrence(s), manifest reviews 1')));});
+test('word audit rejects missing rationale and unknown requirement reference',()=>{const errors=[];audit.reviewWords(new Map([['added\0token',1]]),[{direction:'added',token:'token',count:1,requirement_id:'bad',rationale:''}],errors,'review',new Set(['r1']));assert.ok(errors.some(e=>e.includes('rationale')));assert.ok(errors.some(e=>e.includes('undeclared requirement')));});
+test('word audit catches missing reviewed words',()=>{const errors=[];audit.reviewWords(new Map([['removed\0obsolete',1]]),[],errors,'review',new Set(['r1']));assert.ok(errors.some(e=>e.includes('removed word "obsolete"')));});
+test('commit guard source fails closed and does not invoke Python or Gradle',()=>{const s=fs.readFileSync(path.join(root,'scripts','commit-guard.sh'),'utf8');assert.match(s,/set -Eeuo pipefail/);assert.match(s,/node scripts\/commit-intent-audit\.js/);assert.match(s,/node --test scripts\/\*\.test\.js/);assert.doesNotMatch(s,/python|gradle :app:testDebugUnitTest/i);});
+test('audit source exports staged/head/range modes',()=>{const s=fs.readFileSync(path.join(root,'scripts','commit-intent-audit.js'),'utf8');for(const mode of ['--staged','--head','--range'])assert.ok(s.includes(mode));});
+test('manifest-only follow-up is supported but must follow a code commit',()=>{const s=fs.readFileSync(path.join(root,'scripts','commit-intent-audit.js'),'utf8');assert.match(s,/manifest-only commit/);assert.match(s,/auditCommit\(head\)/);});
+test('privacy guard forbids internet permission and backup',()=>{const s=fs.readFileSync(path.join(root,'scripts','privacy-guard.js'),'utf8');assert.match(s,/android\.permission\.INTERNET/);assert.match(s,/allowBackup/);assert.match(s,/fullBackupContent/);});
+test('privacy XML parser rejects DTDs and duplicate attributes',()=>{const s=fs.readFileSync(path.join(root,'scripts','privacy-guard.js'),'utf8');assert.match(s,/DTD\/declaration markup is not permitted/);assert.match(s,/duplicate XML attribute/);});
+test('migration files are syntactically valid JavaScript',()=>{for(const file of fs.readdirSync(path.join(root,'scripts')).filter(f=>f.endsWith('.js'))){const result=cp.spawnSync(process.execPath,['--check',path.join(root,'scripts',file)],{encoding:'utf8'});assert.equal(result.status,0,file+': '+result.stderr);}});
+test('shell scripts are syntactically valid',()=>{for(const file of fs.readdirSync(path.join(root,'scripts')).filter(f=>f.endsWith('.sh'))){const result=cp.spawnSync('bash',['-n',path.join(root,'scripts',file)],{encoding:'utf8'});assert.equal(result.status,0,file+': '+result.stderr);}});
+test('guard script fails on empty staged commit',()=>{const d=fixture();try{const r=cp.spawnSync('bash',[path.join(root,'scripts','commit-guard.sh')],{cwd:d,encoding:'utf8'});assert.notEqual(r.status,0);assert.match(r.stderr,/no staged changes/);}finally{fs.rmSync(d,{recursive:true,force:true});}});
+function fixture(){const d=fs.mkdtempSync(path.join(os.tmpdir(),'commitguard-fixture-'));const run=(...args)=>{const r=cp.spawnSync('git',args,{cwd:d,encoding:'utf8'});if(r.status!==0)throw new Error(r.stderr);};run('init');run('config','user.email','test@example.invalid');run('config','user.name','CommitGuard test');fs.writeFileSync(path.join(d,'README.md'),'fixture\n');run('add','README.md');run('commit','-m','fixture initial');return d;}
