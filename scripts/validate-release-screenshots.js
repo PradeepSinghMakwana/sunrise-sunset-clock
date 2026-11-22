@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+function validate(directory='android-13-screenshots'){const required=['01-app-setup.png','02-home-screen-widget.png'],seen=new Set(),messages=[];for(const name of required){const file=path.join(directory,name);let bytes;try{bytes=fs.readFileSync(file);}catch{throw new Error(`FAIL: missing Android 13 emulator screenshot: ${file}`);}if(bytes.length<10000||bytes.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'||bytes.subarray(12,16).toString()!=='IHDR')throw new Error(`FAIL: invalid or incomplete PNG: ${file}`);const width=bytes.readUInt32BE(16),height=bytes.readUInt32BE(20);if(width<320||width>3840||height<320||height>3840)throw new Error(`FAIL: unexpected dimensions ${width}x${height}: ${file}`);const hash=crypto.createHash('sha256').update(bytes).digest('hex');if(seen.has(hash))throw new Error('FAIL: setup and widget screenshots are identical');seen.add(hash);messages.push(`PASS: ${name}: ${width}x${height}, ${bytes.length} bytes (Android 13 emulator)`);}return messages;}
+if(require.main===module){try{validate().forEach(console.log);}catch(e){console.error(e.message);process.exit(1);}}
+module.exports={validate};
