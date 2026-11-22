@@ -2,7 +2,7 @@
 # Mandatory local validation gate; Node.js replaces Python and Gradle test dependencies.
 set -Eeuo pipefail
 IFS=$'\n\t'
-ROOT="$(cd -- "$(dirname -- "$(dirname -- "${BASH_SOURCE[0]}"))" && pwd -P)"
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
 cd "$ROOT"
 fail(){ printf '[CommitGuard] ERROR: %s\n' "$*" >&2; exit 1; }
 command -v git >/dev/null 2>&1 || fail 'git is required'
