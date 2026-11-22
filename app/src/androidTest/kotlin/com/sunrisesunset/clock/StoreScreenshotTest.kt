@@ -7,6 +7,9 @@ import android.graphics.Rect
 import android.app.KeyguardManager
 import android.content.ComponentName
 import android.content.Context
+import android.os.Build
+import android.provider.Settings
+import android.view.ViewConfiguration
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -79,10 +82,15 @@ class StoreScreenshotTest {
         )
 
         unlockDevice(device, context)
+        val homeIntent = android.content.Intent(android.content.Intent.ACTION_MAIN)
+            .addCategory(android.content.Intent.CATEGORY_HOME)
+        val launcherPackage = requireNotNull(context.packageManager.resolveActivity(
+            homeIntent, android.content.pm.PackageManager.MATCH_DEFAULT_ONLY
+        )?.activityInfo?.packageName) { "Could not resolve default Android HOME launcher" }
         stage("return to launcher", 5_000) { device.pressHome() }
-        assertTrue("Android launcher did not become visible",
+        assertTrue("Default Android launcher did not become visible: $launcherPackage",
             stage("wait for Android launcher", 10_500) {
-                device.wait(Until.hasObject(By.pkg("com.android.launcher3")), 10_000)
+                device.wait(Until.hasObject(By.pkg(launcherPackage)), 10_000)
             })
         waitForUiIdle(device, "UI idle")
         stage("settle screen", 2_000) { Thread.sleep(250) }
@@ -91,10 +99,13 @@ class StoreScreenshotTest {
         captureShellEvidence(device, context, "02-launcher-before")
 
         val workspace = stage("find launcher workspace", 10_500) {
-            device.wait(Until.findObject(By.res("com.android.launcher3", "workspace")), 10_000)
+            device.wait(Until.findObject(By.res(launcherPackage, "workspace")), 10_000)
         }
-        assertNotNull("Launcher3 workspace was not exposed; inspect 02-launcher-before.xml", workspace)
-        stage("open launcher edit menu", 5_000) { workspace!!.longClick() }
+        assertNotNull("Launcher workspace was not exposed; inspect 02-launcher-before.xml", workspace)
+        val workspaceBounds = workspace!!.visibleBounds
+        assertTrue("Launcher workspace has invalid bounds: $workspaceBounds",
+            workspaceBounds.width() > 0 && workspaceBounds.height() > 0)
+        stage("open launcher edit menu", 5_000) { workspace.longClick() }
         waitForUiIdle(device, "UI idle")
         captureCheckpoint(device, context, "05-launcher-edit-menu")
 
@@ -117,7 +128,7 @@ class StoreScreenshotTest {
         // by the installed app label instead of relying on scroll gesture timing.
         val widgetSearch = stage("find widget picker search", 5_000) {
             device.wait(
-                Until.findObject(By.res("com.android.launcher3", "widgets_search_bar_edit_text")),
+                Until.findObject(By.res(launcherPackage, "widgets_search_bar_edit_text")),
                 4_000
             )
         }
@@ -151,7 +162,7 @@ class StoreScreenshotTest {
         // widget_name accessibility ID is not stable across Android 13 builds.
         captureCheckpoint(device, context, "07-widget-row-selected")
         val widgetPreview = stage("detect widget preview", 8_500) {
-            device.wait(Until.findObject(By.res("com.android.launcher3", "widget_preview")), 8_000)
+            device.wait(Until.findObject(By.res(launcherPackage, "widget_preview")), 8_000)
         }
         captureHierarchy(device, hierarchyFile(context, "07-widget-row-selected"), "widget row selected")
         assertNotNull(
@@ -159,16 +170,20 @@ class StoreScreenshotTest {
                 "do not drag the app-name text",
             widgetPreview
         )
-        // The preview itself is centered on this full-height picker. Dropping at
-        // 48% of the display height moves only a few pixels and leaves the gesture
-        // inside the preview; Launcher3 allocates a provisional widget ID but never
-        // places a host view. Drag well above the picker so it can collapse and the
-        // pointer reaches the actual workspace before release.
-        stage("drag widget onto launcher", 8_000) {
-            widgetPreview!!.drag(
-                android.graphics.Point(device.displayWidth / 2, (device.displayHeight * 0.10).toInt()),
-                1_000)
-        }
+        // Derive the gesture from measured preview/workspace bounds. Touch slop is
+        // a lower bound; the launcher’s private drag threshold is not public.
+        val previewBounds = widgetPreview!!.visibleBounds
+        assertTrue("Widget preview has invalid bounds: $previewBounds", previewBounds.width() > 0 && previewBounds.height() > 0)
+        val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
+        val destinationY = (workspaceBounds.top + workspaceBounds.height() * 0.18f).toInt().coerceIn(0, device.displayHeight - 1)
+        val destinationX = workspaceBounds.centerX().coerceIn(0, device.displayWidth - 1)
+        val startX = previewBounds.centerX()
+        val startY = previewBounds.centerY()
+        val dragDistance = kotlin.math.hypot((destinationX - startX).toDouble(), (destinationY - startY).toDouble()).toInt()
+        assertTrue("Calculated drag distance $dragDistance px does not exceed touch slop ${touchSlop}px; preview=$previewBounds workspace=$workspaceBounds", dragDistance > touchSlop * 2)
+        writeDeviceDiagnostics(context, device, launcherPackage, workspaceBounds, previewBounds,
+            "start=($startX,$startY), destination=($destinationX,$destinationY), distance_px=$dragDistance, touch_slop_px=$touchSlop, duration_ms=1000")
+        stage("drag widget onto launcher", 8_000) { widgetPreview.drag(android.graphics.Point(destinationX, destinationY), 1_000) }
         waitForUiIdle(device, "UI idle")
         stage("settle screen", 2_000) { Thread.sleep(250) }
         captureCheckpoint(device, context, "08-widget-after-placement")
@@ -351,6 +366,25 @@ class StoreScreenshotTest {
         shell(device, "dumpsys appwidget > $evidenceDirectory/$name-appwidget-dump.txt", "$name appwidget diagnostics", 10_000)
     }
 
+    private fun writeDeviceDiagnostics(context: Context, device: UiDevice, launcherPackage: String, workspaceBounds: Rect, previewBounds: Rect?, gesture: String?) {
+        val metrics = context.resources.displayMetrics
+        val launcherInfo = context.packageManager.getPackageInfo(launcherPackage, 0)
+        val serial = stage("read device serial", 3_000) { device.executeShellCommand("getprop ro.serialno").trim() }
+        val lines = listOf(
+            "DEVICE", "serial=$serial", "android_id=${Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)}",
+            "manufacturer=${Build.MANUFACTURER}", "brand=${Build.BRAND}", "model=${Build.MODEL}", "device=${Build.DEVICE}",
+            "product=${Build.PRODUCT}", "android_version=${Build.VERSION.RELEASE}", "api_level=${Build.VERSION.SDK_INT}",
+            "build_fingerprint=${Build.FINGERPRINT}", "DISPLAY", "width_px=${device.displayWidth}", "height_px=${device.displayHeight}",
+            "density=${metrics.density}", "density_dpi=${metrics.densityDpi}", "scaled_density=${metrics.scaledDensity}",
+            "TOUCH", "scaled_touch_slop_px=${ViewConfiguration.get(context).scaledTouchSlop}",
+            "long_press_timeout_ms=${ViewConfiguration.getLongPressTimeout()}", "LAUNCHER", "package=$launcherPackage",
+            "version=${launcherInfo.versionName}", "version_code=${launcherInfo.longVersionCode}", "workspace_bounds=$workspaceBounds",
+            "preview_bounds=${previewBounds ?: "not-yet-detected"}", "GESTURE", gesture ?: "not-yet-performed"
+        )
+        val file = File(screenshotDirectory(context), "03-device-launcher-diagnostics.txt")
+        stage("write device diagnostics", 3_000) { file.writeText(lines.joinToString("\n") + "\n") }
+        assertTrue("Device/launcher diagnostics file is empty", file.isFile && file.length() > 0)
+    }
     private fun hierarchyFile(context: Context, name: String): File {
         val externalFilesDirectory = requireNotNull(context.getExternalFilesDir(null)) {
             "App external-files directory is unavailable; CI cannot collect hierarchy evidence"
