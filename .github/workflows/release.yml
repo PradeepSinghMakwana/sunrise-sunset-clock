@@ -18,6 +18,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Verify JavaScript syntax
+        run: for file in scripts/*.js; do node --check "$file"; done
+
+      - name: Verify Bash syntax
+        run: for file in scripts/*.sh; do bash -n "$file"; done
+
+      - name: Run Node regression suite
+        run: node --test scripts/*.test.js
+
+      - name: Verify app privacy boundary
+        run: node scripts/privacy-guard.js
+
       - name: Set up Java
         uses: actions/setup-java@v5
         with:
