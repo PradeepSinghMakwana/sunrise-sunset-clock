@@ -7271,6 +7271,237 @@
           "rationale": "Reviewed every removed occurrence of 'utf-8' (1) in 226671c; it replaces the obsolete hierarchy-evidence behavior: Update the regression test to require the instrumentation-safe copy and byte-count verification, and explicitly reject the duplicate uiautomator dump and unsupported shell-if implementation."
         }
       ]
+    },
+    "54ff71709147bac0a37fe18ddfdb81d0636d1a19": {
+      "intent": "Replace the obsolete resource-contract assertions that required the broken second uiautomator dump and unsupported shell-if verification with assertions for UiDevice hierarchy capture, shell-owned copy, byte-count validation, and explicit rejection of the old commands.",
+      "reviewed_by": "Assistant review of the exact GitHub diff and run 469 JVM test failure at WidgetResourceContractTest.kt:85; repository-owner review remains possible",
+      "commit_subject": "Align widget evidence contract with UiDevice hierarchy export",
+      "requirements": [
+        {
+          "id": "R1",
+          "text": "The resource contract test must require UiDevice hierarchy capture, copy to shell-owned evidence storage, positive byte-count verification, and reject the duplicate uiautomator dump and unsupported shell-if commands."
+        }
+      ],
+      "file_reviews": {
+        "app/src/test/kotlin/com/sunrisesunset/clock/WidgetResourceContractTest.kt": {
+          "requirement_ids": [
+            "R1"
+          ],
+          "necessity": "Run 469 failed because this test still required the old commands that caused the Android instrumentation failure. Updating the assertions keeps regression coverage aligned with the corrected evidence implementation without weakening non-empty hierarchy validation."
+        }
+      },
+      "word_reviews": [
+        {
+          "direction": "added",
+          "token": "assertTrue",
+          "count": 7,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 7 added occurrence(s) of 'assertTrue' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "source.contains",
+          "count": 7,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 7 added occurrence(s) of 'source.contains' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "cp",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'cp' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "sourceHierarchy.absolutePath",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'sourceHierarchy.absolutePath' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "hierarchyPath",
+          "count": 4,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 4 added occurrence(s) of 'hierarchyPath' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "wc",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'wc' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "c",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'c' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "device.dumpWindowHierarchy",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'device.dumpWindowHierarchy' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "file",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'file' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "Regex",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'Regex' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "s",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 3 added occurrence(s) of 's' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "1-9",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of '1-9' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "d",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'd' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "uiautomator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'uiautomator' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "dump",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'dump' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "if",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'if' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'test' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "added",
+          "token": "HIERARCHY_DUMP_OK",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 added occurrence(s) of 'HIERARCHY_DUMP_OK' in the contract-test update; they assert the new UiDevice hierarchy-copy and byte-count contract or reject obsolete behavior."
+        },
+        {
+          "direction": "removed",
+          "token": "1",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of '1'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "2",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of '2'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "assertTrue",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 3 removed occurrence(s) of 'assertTrue'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "source.contains",
+          "count": 3,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 3 removed occurrence(s) of 'source.contains'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "uiautomator",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of 'uiautomator'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "dump",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of 'dump'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "hierarchyPath",
+          "count": 2,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 2 removed occurrence(s) of 'hierarchyPath'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "if",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of 'if'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "test",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of 'test'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "s",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of 's'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "verification.contains",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of 'verification.contains'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        },
+        {
+          "direction": "removed",
+          "token": "HIERARCHY_DUMP_OK",
+          "count": 1,
+          "requirement_id": "R1",
+          "rationale": "Reviewed all 1 removed occurrence(s) of 'HIERARCHY_DUMP_OK'; they belonged to assertions that mandated the obsolete and known-broken shell dump/if implementation."
+        }
+      ]
     }
   }
 }
