@@ -46,18 +46,24 @@ jobs:
           GITHUB_REF_NAME: ${{ github.ref_name }}
         run: bash scripts/release-audit.sh
 
+      - name: Validate non-Pixel AVD profile availability
+        run: node scripts/avd-profile-validation.js 'Nexus 5X'
+
       - name: Capture genuine app screenshot on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 35
           arch: x86_64
-          profile: pixel_2
+          profile: Nexus 5X
           disable-animations: true
           script: |
             gradle :app:connectedDebugAndroidTest
             mkdir -p fastlane/metadata/android/en-US/images/phoneScreenshots
             adb pull /sdcard/Android/data/com.sunrisesunset.clock/files/screenshots/01-app-setup.png fastlane/metadata/android/en-US/images/phoneScreenshots/01-app-setup.png
             adb pull /sdcard/Android/data/com.sunrisesunset.clock/files/screenshots/02-home-screen-widget.png fastlane/metadata/android/en-US/images/phoneScreenshots/02-home-screen-widget.png
+
+      - name: Validate captured release screenshots
+        run: node scripts/validate-release-screenshots.js fastlane/metadata/android/en-US/images/phoneScreenshots
 
       - name: Build release APK
         run: gradle :app:assembleRelease
