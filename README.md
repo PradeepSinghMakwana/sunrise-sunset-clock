@@ -99,4 +99,17 @@ The counts below compare each named branch with `main` at the time this section 
 | `feature/solar-ui-test-parity` (no open PR at snapshot) | 11 ahead, 0 behind | Review the branch's UI-test changes, bring it up to date with `main`, run the relevant checks, and open or update a PR before integration. |
 
 **Important:** The queue is not a statement that any branch is already approved to merge. The current PR head, live comparison, conflict state, and latest CI results must be rechecked immediately before every integration. Merge one verified branch at a time, then use the resulting `main` as the base for the next branch.
+## Local Node.js CommitGuard
 
+Run the local pre-commit validation gate from the repository root before committing:
+
+```bash
+bash scripts/commit-guard.sh
+```
+
+The local gate requires Git, Bash, and Node.js only. It checks whitespace, staged/unstaged overlap, a fail-closed intention manifest and token-occurrence audit, privacy boundaries, Bash and JavaScript syntax, and the Node regression suite. It does **not** invoke Python or Gradle. Android/Kotlin compilation, JVM tests, lint, Detekt, APK builds, and emulator UI tests remain CI responsibilities; Node-only validation is not a substitute for them.
+
+
+## Node migration regression checks
+
+CI runs `node --check` on JavaScript scripts, `bash -n` on shell scripts, `node --test scripts/*.test.js`, and the privacy guard. The AVD and screenshot helper migrations are source-level utilities; they must be wired to the corresponding workflow steps before removing their Python predecessors.
