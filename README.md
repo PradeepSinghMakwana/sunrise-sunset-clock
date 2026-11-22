@@ -1,31 +1,29 @@
 # Sunrise Sunset Clock — Android home-screen widget
 
-A native Android widget featuring:
-- A live digital clock using the device's local time zone.
-- Daily sunrise and sunset calculated for the device's approximate location.
+A native Android home-screen widget featuring:
+
+- A live digital clock that follows the device's local time zone.
+- Daily sunrise and sunset calculated from the device's approximate location.
 - Approximate location permission only (`ACCESS_COARSE_LOCATION`).
-- Offline solar-time calculation; no API key or external location service required by the app.
+- Offline solar-time calculation; no API key or external location service is required.
 
 Built with ChatGPT, guided by the repository owner.
 
-## Build with GitHub Actions
+## Build a debug APK
+
 1. Open the repository's **Actions** tab.
-2. Select **Build Android APK** and run the workflow.
+2. Select **Build Android APK** and run the workflow (or download the artifact from a completed run).
 3. Download the `Sunrise-Sunset-Clock-debug` artifact.
 4. Extract and install `app-debug.apk`.
 
-## Kotlin code-quality workflow
+You can also build locally with Java 17 and Gradle 8.9:
 
-For every Kotlin code change, **fix Detekt before working on Android lint**:
-
-1. Run `gradle :app:detekt`.
-2. Resolve every Detekt finding in the source; do not hide findings by weakening rules, adding a baseline, or applying blanket suppressions.
-3. Rerun Detekt and repeat until it passes.
-4. Only then run `gradle :app:lintDebug` and resolve any lint findings.
-
-This is the required order for fixing code-quality issues. Keep the Detekt and Android lint CI jobs independent so both checks still run and report their results even when one fails.
+```bash
+gradle :app:assembleDebug
+```
 
 ## Setup
+
 1. Open Sunrise Sunset Clock.
 2. Allow approximate location when Android asks.
 3. Keep the app open briefly while it obtains a location fix.
@@ -34,69 +32,109 @@ This is the required order for fixing code-quality issues. Keep the Detekt and A
 Tap the widget to reopen setup.
 
 ## Privacy
-The app requests approximate location only. It does not declare or request precise location permission. Coordinates are stored locally on the device and used for the sunrise/sunset calculation.
 
-## Notes
-Sunrise and sunset use a NOAA-style approximation and may differ slightly from published almanacs. The clock follows the device's current time zone. The widget refreshes periodically and when Android reports date, time, or time-zone changes.
+See the full [Privacy Policy](docs/PRIVACY_POLICY.md).
 
-## Engineering effort and automation ROI
+**The app has no network permission and never uploads app data.** It does not send location, device identifiers, analytics, crash data, bug reports, screenshots, logs, or diagnostics to the developer or any server. There is no report-submission feature, and none will be added. The app also disables Android cloud backup and device-transfer backup so its locally stored location is not included in app backups. Approximate location is used only on-device for offline sunrise/sunset calculations.
 
-**Assessment snapshot: 16 November 2026.** The emulator screenshot automation and its diagnostics required a concentrated troubleshooting effort. The relevant work spanned approximately 3 hours 11 minutes of elapsed clock time (about 04:25–07:36 UTC). This is a wall-clock window across multiple work and CI events, **not a measured timesheet or 3 hours 11 minutes of continuous hands-on work**.
+## Solar times and time zones
 
-The troubleshooting included approximately 14 technical commits focused on emulator tests, launcher-widget screenshot capture, CI behaviour, and diagnostics. Several manual emulator workflow attempts failed or were cancelled while the tests were being developed. Ordinary push builds were configured to skip the emulator tests; emulator testing is reserved for pull requests and manual workflow runs.
+Sunrise and sunset are calculated offline using a NOAA-style approximation. Results can differ slightly from published almanacs.
 
-### Cost assumptions
+The widget displays solar times in the device's current time zone. The location coordinates determine the solar events; the device time zone determines how those events are displayed as local clock times. The Android 13 CI UI-test emulator uses the `America/Los_Angeles` time zone for its California test coordinates, configured before tests run. **Those CI test coordinates and times are test fixtures, not the user's live location or a guarantee of local accuracy.**
 
-- No paid cloud VM or physical test device was used for the GitHub Actions emulator runs described in this assessment.
-- GitHub Actions usage for this public repository was treated as **₹0 direct runner cost**, assuming standard public-repository hosted-runner eligibility and no separately billed services.
-- Mobile data usage and any other indirect costs were not measured.
-- Labour has no recorded cash payment. For opportunity-cost illustration only, valuing the 3.18-hour elapsed window at ₹300, ₹500, or ₹1,000 per hour gives approximately ₹955, ₹1,590, or ₹3,180 respectively. These are hypothetical valuations, not actual expenditure.
+The widget refreshes periodically and when Android reports date, time, or time-zone changes.
 
-### Expected return
+## CommitGuard: repository-wide commit verification
 
-The intended return is repeatable, automated evidence that the app setup screen and the real home-screen widget render correctly, reducing manual release checks and helping catch regressions.
+CommitGuard is a repository-wide requirement for **all changes and commits**, not a release-only check. It applies to ordinary feature work, bug fixes, maintenance, pull requests, branch pushes, and releases. Before committing changes, run the repository guard from the project root:
 
-If the automation eventually saves 15–30 minutes per release, it would recover an estimated 3.18-hour effort after roughly 7–13 releases. This is a planning scenario, not a measured saving. The calculation excludes the additional value of catching defects before release.
+```bash
+bash scripts/commit-guard.sh
+```
 
-**Acceptance status at this assessment:** the required genuine app-setup and launcher-widget screenshots had not yet both been successfully captured and visually verified. Therefore, the automation's delivery ROI was not yet demonstrated. Do not treat the estimated future savings as realised benefits. Update this section when the screenshot tests pass reliably and actual CI usage or time savings can be measured.
+CommitGuard is intended to fail closed and checks:
+- Shell scripts for syntax errors.
+- Python scripts for parse errors and suspicious imported-module attribute references (including typo suggestions).
+- The Python regression test suite, including CommitGuard's own tests.
+- Gradle JVM unit tests (and fails if the Gradle command is unavailable).
+
+The reference checker accepts valid Python submodule imports (for example, `from unittest import mock`) and tests a known typo case (`re.MULTIL`, suggesting `re.MULTILINE`). The general Android CI workflow runs for pushes to every branch and pull requests, and invokes CommitGuard as a required validation job. The release workflow also invokes the same guard; release validation is an additional use, not the scope of the policy.
+
+### Mandatory intention and commit audit
+
+Passing syntax checks and tests is not, by itself, permission to commit. **Every proposed commit must be checked against the user's stated task and acceptance criteria.** CommitGuard is required to perform (and fail closed on) all of the following before a commit is approved:
+
+1. **Intention traceability:** Review every changed line and meaningful word, identifier, setting, resource name, test, workflow entry, and commit-message claim. Map each change to an explicit user requirement or a clearly explained necessary supporting fix. Flag unexplained or ambiguous changes; do not silently infer approval.
+2. **Necessity and scope:** Establish why each change is required. Detect and block unrelated edits, scope creep, unnecessary refactoring, duplicate or dead code, and changes that do not contribute to an accepted requirement. If a change is optional, do not include it without approval.
+3. **Reference correctness:** Verify that changed references resolve and are used in the right context. This includes imports and symbols, identifiers, resource IDs, filenames and paths, configuration keys, Gradle tasks, workflow/job/step references, test names, and links or other cross-file references. A reference merely existing is not enough; check that its target and usage match the intended meaning.
+4. **Behavior and regression evidence:** Run the applicable regression, boundary, negative, static-analysis, build, and UI checks. Inspect failures and relevant generated screenshots/diagnostics. Never weaken or remove a test merely to obtain a passing result.
+5. **Commit decision gate:** Produce an auditable report of requirement-to-change mapping, necessity, reference validation, tests, failures, and unresolved concerns. Automatically allow the commit when every required check passes and the complete diff is justified and auditable. Automatically block it when a mandatory check fails, a change is unjustified, or a material uncertainty remains.
+6. **Post-commit verification:** Inspect the actual committed diff and commit message against the audit record, and verify that the committed content is the content that was checked. A changed or expanded diff requires a new audit.
+
+**Current implementation:** the intention audit is implemented as a fail-closed, manifest-backed check. For each audited commit, it verifies the exact added and removed word-token occurrence counts (using Git's word-diff output), checks that every changed file has a necessity rationale and valid requirement references, checks that every reviewed word has a rationale and valid requirement reference, and verifies that the recorded commit subject matches the actual commit. The range mode validates commits individually, so later changes cannot hide earlier unaudited changes through a net-zero diff. Manifest-only follow-up commits are handled separately from the code commit they document.
+
+These checks validate the completeness and internal consistency of the audit record; they do not independently establish the truth of a stated rationale or infer unstated requirements. The audit therefore requires explicit, task-grounded requirement and rationale entries. It must fail closed for missing, stale, mismatched, or unresolved records.
+
+### Autonomous approval and exceptional human escalation
+
+Human approval is **not a routine prerequisite** for every commit. CommitGuard's default operating model is autonomous:
+
+- **Proceed automatically** when all required deterministic checks pass, every changed file and word occurrence is accounted for, necessity and requirement references are documented, applicable regression evidence is satisfactory, and no material uncertainty remains.
+- **Block automatically** when a required check fails, evidence is missing, a reference cannot be verified, a change is unjustified or outside scope, or the audit is incomplete. A blocked commit is not approved merely because a person is unavailable.
+- **Escalate to a human only when genuinely necessary**, such as when resolving ambiguous user intent, making a subjective product or safety decision, accepting exceptional risk, or obtaining authorization that automation cannot provide. Ask only for the specific decision that cannot be made safely or legitimately by automation.
+- **Never fabricate or imply human approval.** Automated analysis, a generated manifest, a non-empty `reviewed_by` field, or a green CI result is not itself evidence that a human reviewed or approved the change. Record the actual reviewer accurately; identify automated checks as automated. Do not label an automated review as a human attestation.
+- **Fail safely when escalation is indispensable.** If the required human decision or authorization cannot be obtained, stop that change and report what decision is needed. Do not silently bypass the gate.
+
+The policy is to minimize human intervention, not to eliminate necessary oversight. Human review is reserved for decisions that cannot be resolved by the documented requirements and reliable automated checks. The current manifest-backed checker verifies audit-record completeness and consistency; it does not itself determine whether a rationale is truthful, decide subjective questions, or implement a general human-approval workflow. Its status messages and manifest fields must not be treated as proof of human approval.
+
+The remaining validation boundaries must be stated precisely: the Python reference checker statically checks Python syntax and selected standard-library imports/attributes; it is not a comprehensive validator for Kotlin symbols, Android resources, Gradle configuration, workflow references, or every cross-file relationship. The shell guard also runs shell syntax checks, the Python regression suite, and JVM unit tests, failing if Gradle is unavailable. Do not describe these narrower checks as universal reference validation.
+
+CommitGuard is also invoked in the Android CI and release workflows. GitHub API commits do not execute local Git hooks, so the per-commit CI range audit is essential. After a commit, the actual commit and its manifest record must be checked together; any changed content requires a fresh audit.
+
+Direct commits made through GitHub's API do not execute a local pre-commit hook. Therefore, do not treat a local hook as the only enforcement: CI and repository branch-protection/required-check settings must enforce CommitGuard for ordinary development branches and pull requests as well as releases. API-based commits must also be audited before they are made.
+
+## CI checks
+
+Pull requests and pushes to `main` run independent checks:
+
+- **Shell validation:** release-script syntax and script regression tests.
+- **JVM unit tests:** solar calculations, location validation, and other app logic.
+- **Detekt:** Kotlin static analysis.
+- **Android lint:** Android-specific static checks.
+- **Debug APK build:** assembles and uploads the `app-debug.apk` artifact.
+- **Android 13 (API 33) UI tests:** runs instrumented tests on an emulator after JVM unit tests pass. The runner sets the test time zone to `America/Los_Angeles` and collects screenshots, UI hierarchy XML, app-widget dumps, and logcat diagnostics as artifacts.
+
+The same Android 13 emulator UI test runs during release creation. The two published app screenshots are genuine captures of the running emulator UI, explicitly identified as emulator screenshots. They are not physical-device captures and do not prove behavior on every OEM launcher or physical device.
+
+## Kotlin code-quality workflow
+
+For Kotlin code changes, run Detekt before Android lint:
+
+1. Run `gradle :app:detekt`.
+2. Fix every finding without weakening rules, adding a baseline, or applying blanket suppressions.
+3. Rerun Detekt until it passes.
+4. Then run `gradle :app:lintDebug` and fix lint findings.
+
+Keep Detekt and Android lint CI jobs independent so both report results even when one fails.
+
+## Releases and screenshots
+
+Tagged releases use the automated GitHub Actions pipeline. See [Release process](docs/RELEASE_PROCESS.md) for versioning, Gradle build instructions, dependency and permission audits, F-Droid metadata generation, source archives, and screenshot requirements. See [Emulator UI test diagnostics](docs/EMULATOR_DIAGNOSTICS.md) for investigation steps and the distinction between app permissions and test-only emulator access.
+
+Every release requires two genuine Android 13 emulator UI screenshots:
+
+- `01-app-setup.png` — the actual app setup screen.
+- `02-home-screen-widget.png` — the actual launcher home screen with the widget and sunrise/sunset values visible.
+
+The release workflow captures these from the emulator during the tagged run, checks their basic PNG structure, and publishes each PNG as a separate release asset. Their origin is documented as emulator captures, never as physical-device screenshots. Do not push a release tag until the Android 13 UI test and screenshot validation pass.
+
+Push a tag matching the app's `versionName` (for example, `v2.0`) to start a release. The workflow publishes a GitHub Release with the APK, tagged source archive, screenshots, and audit reports. F-Droid publication still requires its official submission and maintainer review; generated metadata alone does not mean the app is published.
+
+## Branch integration policy
+
+`main` is the source of truth. Before integrating a feature branch, bring it up to date with `main`, resolve conflicts while preserving the intent of both changes, run applicable CI checks, review the diff, and merge only after verification. After each merge, use the updated `main` as the base for the next branch. Check live branch/PR status rather than relying on a dated queue snapshot.
 
 ## License
 
-This project is licensed under the MIT License.
-See the [LICENSE](LICENSE) file for details.
-
-## Releases
-
-Tagged releases use the automated GitHub Actions pipeline. See [Release process](docs/RELEASE_PROCESS.md) for versioning, Gradle build instructions, dependency and permission audits, F-Droid metadata generation, source archives, and store screenshot requirements. See [Emulator UI test diagnostics](docs/EMULATOR_DIAGNOSTICS.md) for failure investigation, CI evidence, and the distinction between app permissions and test-only emulator access.
-
-Push a tag matching the app's `versionName` (for example, `v2.1`) to start a release. The workflow publishes a GitHub Release with the APK, tagged source archive, and audit reports.
-
-## Branch synchronization and integration policy
-
-**`main` is the source of truth.** Feature branches are short-lived workspaces, not independent long-term lines of development. They may differ while work is in progress, but they must be brought back into alignment regularly.
-
-### Required workflow for every feature branch
-
-1. **Start from current `main`.** Before integrating or continuing substantial feature work, merge the latest `main` into that feature branch.
-2. **Preserve both sides.** Resolve merge conflicts by understanding the intent of each change. Do not blindly choose `main` or the feature branch, discard working behaviour, or replace one implementation with another merely to silence a conflict. Keep both intended changes and add or update tests where their interaction requires it.
-3. **Run that branch's independent CI checks.** Run all checks assigned to that branch and let them report independently. A failure in one job must not prevent unrelated jobs from running or hide their results. Fix real failures; do not weaken assertions, disable checks, add broad suppressions, or create baselines to obtain a green result.
-4. **Verify before integration.** Review the diff, confirm the intended behaviour is retained, and require the relevant CI checks to pass. Do not merge an unverified feature branch into `main`.
-5. **Merge feature branch into `main`.** Once verified, integrate it and confirm the resulting `main` build/checks.
-6. **Repeat from the newly updated `main`.** Before integrating the next feature branch, merge that latest `main` back into it, resolve conflicts while preserving intent, run its checks, and only then integrate it.
-
-Keep branches synchronized frequently. Do not allow a branch to accumulate a large behind-count or drift for weeks. If two branches touch the same code, coordinate their order and reconcile them early. Branch-specific CI scope may differ where intentional (for example, a unit-test branch need not run emulator UI tests), but the checks that do apply must remain independent.
-
-### Integration queue snapshot — 17 November 2026
-
-The counts below compare each named branch with `main` at the time this section was written. They are a snapshot, not a substitute for checking the live branch state before each merge.
-
-| Branch / PR | Difference from `main` | Known work / action |
-|---|---:|---|
-| `feature/emulator-ci-isolation` (#8) | 54 ahead, 0 behind | Contains the MVVM/Compose location-setup refactor and emulator screenshot automation. Detekt had a maximum-line-length failure; emulator CI stopped because the emulator remained locked. Fix both and rerun the independent checks before integration. |
-| `feature/unit-tests` (#10) | 55 ahead, 0 behind | Contains JVM solar-calculation tests and four independent CI jobs. It does not yet contain the MVVM location-setup refactor. Keep emulator UI testing out of this branch's CI. Reconcile the MVVM implementation with this branch before it is integrated so `main` does not regress. |
-| `docs/solar-calculation-acceptance` (#9) | 2 ahead, 0 behind | Documentation-only changes. Review the documentation diff and resolve its reported CI failure before integration. |
-| `feature/widget-runtime-fix` (#6) | 1 ahead, 44 behind | Diverged substantially. Do not merge as-is. First merge current `main` into this branch, resolve conflicts while preserving the widget-runtime fix, and run its relevant checks. |
-| `feature/solar-ui-test-parity` (no open PR at snapshot) | 11 ahead, 0 behind | Review the branch's UI-test changes, bring it up to date with `main`, run the relevant checks, and open or update a PR before integration. |
-
-**Important:** The queue is not a statement that any branch is already approved to merge. The current PR head, live comparison, conflict state, and latest CI results must be rechecked immediately before every integration. Merge one verified branch at a time, then use the resulting `main` as the base for the next branch.
-
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

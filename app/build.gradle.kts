@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.Test
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -14,7 +16,7 @@ android {
         minSdk = 26
         targetSdk = 35
         versionCode = 2
-        versionName = "2.0"
+        versionName = "2.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,8 +26,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
 
-    kotlinOptions { jvmTarget = "17" }
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
 }
 
 dependencies {
@@ -54,6 +60,10 @@ dependencies {
 detekt {
     buildUponDefaultConfig = true
     allRules = false
+}
+
+tasks.withType<Test>().configureEach {
+    failFast = true
 }
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
