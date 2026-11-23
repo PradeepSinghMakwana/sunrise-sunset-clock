@@ -1,7 +1,6 @@
 # Sunrise Sunset Clock — Android home-screen widget
 
 A native Android widget featuring:
-
 - A live digital clock using the device's local time zone.
 - Daily sunrise and sunset calculated for the device's approximate location.
 - Approximate location permission only (`ACCESS_COARSE_LOCATION`).
@@ -9,33 +8,11 @@ A native Android widget featuring:
 
 Built with ChatGPT, guided by the repository owner.
 
----
-
 ## Build with GitHub Actions
-
 1. Open the repository's **Actions** tab.
 2. Select **Build Android APK** and run the workflow.
 3. Download the `Sunrise-Sunset-Clock-debug` artifact.
 4. Extract and install `app-debug.apk`.
-
-## Setup
-
-1. Open Sunrise Sunset Clock.
-2. Allow approximate location when Android asks.
-3. Keep the app open briefly while it obtains a location fix.
-4. Add the Sunrise Sunset Clock widget from your launcher's Widgets screen.
-
-Tap the widget to reopen setup.
-
-## Privacy
-
-The app requests approximate location only. It does not declare or request precise location permission. Coordinates are stored locally on the device and used for the sunrise/sunset calculation.
-
-## Notes
-
-Sunrise and sunset use a NOAA-style approximation and may differ slightly from published almanacs. The clock follows the device's current time zone. The widget refreshes periodically and when Android reports date, time, or time-zone changes.
-
----
 
 ## Kotlin code-quality workflow
 
@@ -48,7 +25,19 @@ For every Kotlin code change, **fix Detekt before working on Android lint**:
 
 This is the required order for fixing code-quality issues. Keep the Detekt and Android lint CI jobs independent so both checks still run and report their results even when one fails.
 
----
+## Setup
+1. Open Sunrise Sunset Clock.
+2. Allow approximate location when Android asks.
+3. Keep the app open briefly while it obtains a location fix.
+4. Add the Sunrise Sunset Clock widget from your launcher's Widgets screen.
+
+Tap the widget to reopen setup.
+
+## Privacy
+The app requests approximate location only. It does not declare or request precise location permission. Coordinates are stored locally on the device and used for the sunrise/sunset calculation.
+
+## Notes
+Sunrise and sunset use a NOAA-style approximation and may differ slightly from published almanacs. The clock follows the device's current time zone. The widget refreshes periodically and when Android reports date, time, or time-zone changes.
 
 ## Engineering effort and automation ROI
 
@@ -71,7 +60,10 @@ If the automation eventually saves 15–30 minutes per release, it would recover
 
 **Acceptance status at this assessment:** the required genuine app-setup and launcher-widget screenshots had not yet both been successfully captured and visually verified. Therefore, the automation's delivery ROI was not yet demonstrated. Do not treat the estimated future savings as realised benefits. Update this section when the screenshot tests pass reliably and actual CI usage or time savings can be measured.
 
----
+## License
+
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
 
 ## Releases
 
@@ -98,34 +90,15 @@ Keep branches synchronized frequently. Do not allow a branch to accumulate a lar
 
 The counts below compare each named branch with `main` at the time this section was written. They are a snapshot, not a substitute for checking the live branch state before each merge.
 
-#### `feature/emulator-ci-isolation` (#8)
-
-- **Difference from `main`:** 54 ahead, 0 behind
-- **Known work / action:** Contains the MVVM/Compose location-setup refactor and emulator screenshot automation. Detekt had a maximum-line-length failure; emulator CI stopped because the emulator remained locked. Fix both and rerun the independent checks before integration.
-
-#### `feature/unit-tests` (#10)
-
-- **Difference from `main`:** 55 ahead, 0 behind
-- **Known work / action:** Contains JVM solar-calculation tests and four independent CI jobs. It does not yet contain the MVVM location-setup refactor. Keep emulator UI testing out of this branch's CI. Reconcile the MVVM implementation with this branch before it is integrated so `main` does not regress.
-
-#### `docs/solar-calculation-acceptance` (#9)
-
-- **Difference from `main`:** 2 ahead, 0 behind
-- **Known work / action:** Documentation-only changes. Review the documentation diff and resolve its reported CI failure before integration.
-
-#### `feature/widget-runtime-fix` (#6)
-
-- **Difference from `main`:** 1 ahead, 44 behind
-- **Known work / action:** Diverged substantially. Do not merge as-is. First merge current `main` into this branch, resolve conflicts while preserving the widget-runtime fix, and run its relevant checks.
-
-#### `feature/solar-ui-test-parity` (no open PR at snapshot)
-
-- **Difference from `main`:** 11 ahead, 0 behind
-- **Known work / action:** Review the branch's UI-test changes, bring it up to date with `main`, run the relevant checks, and open or update a PR before integration.
+| Branch / PR | Difference from `main` | Known work / action |
+|---|---:|---|
+| `feature/emulator-ci-isolation` (#8) | 54 ahead, 0 behind | Contains the MVVM/Compose location-setup refactor and emulator screenshot automation. Detekt had a maximum-line-length failure; emulator CI stopped because the emulator remained locked. Fix both and rerun the independent checks before integration. |
+| `feature/unit-tests` (#10) | 55 ahead, 0 behind | Contains JVM solar-calculation tests and four independent CI jobs. It does not yet contain the MVVM location-setup refactor. Keep emulator UI testing out of this branch's CI. Reconcile the MVVM implementation with this branch before it is integrated so `main` does not regress. |
+| `docs/solar-calculation-acceptance` (#9) | 2 ahead, 0 behind | Documentation-only changes. Review the documentation diff and resolve its reported CI failure before integration. |
+| `feature/widget-runtime-fix` (#6) | 1 ahead, 44 behind | Diverged substantially. Do not merge as-is. First merge current `main` into this branch, resolve conflicts while preserving the widget-runtime fix, and run its relevant checks. |
+| `feature/solar-ui-test-parity` (no open PR at snapshot) | 11 ahead, 0 behind | Review the branch's UI-test changes, bring it up to date with `main`, run the relevant checks, and open or update a PR before integration. |
 
 **Important:** The queue is not a statement that any branch is already approved to merge. The current PR head, live comparison, conflict state, and latest CI results must be rechecked immediately before every integration. Merge one verified branch at a time, then use the resulting `main` as the base for the next branch.
-
----
 
 ## Review backlog
 
@@ -133,8 +106,3 @@ The counts below compare each named branch with `main` at the time this section 
 - [#26 — Android 13 screenshot hierarchy timeout](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/26)
 - [#27 — Widget and solar-behavior regression coverage](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/27)
 - [#28 — Emulator CI reliability and diagnostics](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/28)
-- [#30 — Branch review and reconciliation](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/30)
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
