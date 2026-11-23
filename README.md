@@ -100,3 +100,23 @@ The counts below compare each named branch with `main` at the time this section 
 
 **Important:** The queue is not a statement that any branch is already approved to merge. The current PR head, live comparison, conflict state, and latest CI results must be rechecked immediately before every integration. Merge one verified branch at a time, then use the resulting `main` as the base for the next branch.
 
+
+
+## Review findings and pending work
+
+The following findings were recorded from prior code/CI reviews. They are tracked as separate open issues so they can be prioritized and addressed individually. **Recording a finding does not mean it has been fixed or verified.** Re-check the current branch, CI runs, and behavior before implementation.
+
+### Pending issues
+
+- [#26 — Increase Android 13 screenshot hierarchy verification timeout](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/26): Android 13 screenshot/UI test hierarchy checks timed out at 3,000 ms even though the hierarchy dump had its own 10-second deadline. Investigate a 10-second verification wait while preserving non-empty assertions and independent stage deadlines.
+- [#27 — Expand Android widget and solar-behavior regression coverage](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/27): Track gaps around solar boundaries, invalid preferences, widget refresh/lifecycle, resize, multiple instances, reboot, time-zone changes, location failure, and verifying rendered widget output rather than registration alone.
+- [#28 — Improve emulator UI CI reliability and failure diagnostics](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/28): Track emulator startup/lock/ADB instability, screenshot and hierarchy artifact validation, diagnostic collection, and preserving the original failure status.
+- [#2 — Fix failed Android build (run 42559071865](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/2)): Existing open issue documenting a Kotlin/Java JVM target mismatch in the debug build. Keep it separate from the UI-test findings.
+
+### Pending-work policy
+
+- Keep findings and improvements as individual GitHub issues; do not immediately implement the entire review backlog.
+- Work only on an issue explicitly selected for action.
+- Keep each fix scoped to its issue, use a focused branch, review the complete diff, and run the required checks before integration.
+- Do not close an issue until its acceptance criteria are completed and verified.
+- Recheck live branch, PR, and CI status before acting; historical snapshots in this README are not current status guarantees.
