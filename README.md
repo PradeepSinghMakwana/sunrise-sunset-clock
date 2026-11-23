@@ -102,21 +102,17 @@ The counts below compare each named branch with `main` at the time this section 
 
 
 
-## Review findings and pending work
+## Review backlog
 
-The following findings were recorded from prior code/CI reviews. They are tracked as separate open issues so they can be prioritized and addressed individually. **Recording a finding does not mean it has been fixed or verified.** Re-check the current branch, CI runs, and behavior before implementation.
+Detailed technical discussion, evidence, hypotheses, proposed changes, risks, and acceptance criteria belong in the individual GitHub issues—not in this README.
 
-### Pending issues
+- [#2 — Debug build JVM target mismatch](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/2)
+- [#26 — Android 13 screenshot hierarchy timeout](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/26)
+- [#27 — Widget and solar-behavior regression coverage](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/27)
+- [#28 — Emulator CI reliability and diagnostics](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/28)
 
-- [#26 — Increase Android 13 screenshot hierarchy verification timeout](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/26): Android 13 screenshot/UI test hierarchy checks timed out at 3,000 ms even though the hierarchy dump had its own 10-second deadline. Investigate a 10-second verification wait while preserving non-empty assertions and independent stage deadlines.
-- [#27 — Expand Android widget and solar-behavior regression coverage](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/27): Track gaps around solar boundaries, invalid preferences, widget refresh/lifecycle, resize, multiple instances, reboot, time-zone changes, location failure, and verifying rendered widget output rather than registration alone.
-- [#28 — Improve emulator UI CI reliability and failure diagnostics](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/28): Track emulator startup/lock/ADB instability, screenshot and hierarchy artifact validation, diagnostic collection, and preserving the original failure status.
-- [#2 — Fix failed Android build (run 42559071865](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/2)): Existing open issue documenting a Kotlin/Java JVM target mismatch in the debug build. Keep it separate from the UI-test findings.
+### Issue and evidence hygiene
 
-### Pending-work policy
+Before adding public logs, screenshots, traces, or artifacts, check for and redact credentials, tokens, private keys, personal identifiers, precise location, device identifiers, notifications, private paths, and other sensitive information. Prefer minimal sanitized evidence. If a secret leaks, rotate/revoke it and remove or invalidate exposed artifacts; deleting the text alone is not enough.
 
-- Keep findings and improvements as individual GitHub issues; do not immediately implement the entire review backlog.
-- Work only on an issue explicitly selected for action.
-- Keep each fix scoped to its issue, use a focused branch, review the complete diff, and run the required checks before integration.
-- Do not close an issue until its acceptance criteria are completed and verified.
-- Recheck live branch, PR, and CI status before acting; historical snapshots in this README are not current status guarantees.
+Keep issues open until their criteria are implemented and verified. Work on only the issue explicitly selected; use focused branches and review/testing before integration. README is an index, not a technical discussion or proof of completion.
