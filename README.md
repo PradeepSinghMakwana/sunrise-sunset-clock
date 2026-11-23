@@ -100,19 +100,10 @@ The counts below compare each named branch with `main` at the time this section 
 
 **Important:** The queue is not a statement that any branch is already approved to merge. The current PR head, live comparison, conflict state, and latest CI results must be rechecked immediately before every integration. Merge one verified branch at a time, then use the resulting `main` as the base for the next branch.
 
-
-
 ## Review backlog
-
-Detailed technical discussion, evidence, hypotheses, proposed changes, risks, and acceptance criteria belong in the individual GitHub issues—not in this README.
 
 - [#2 — Debug build JVM target mismatch](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/2)
 - [#26 — Android 13 screenshot hierarchy timeout](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/26)
 - [#27 — Widget and solar-behavior regression coverage](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/27)
 - [#28 — Emulator CI reliability and diagnostics](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/28)
-
-### Issue and evidence hygiene
-
-Before adding public logs, screenshots, traces, or artifacts, check for and redact credentials, tokens, private keys, personal identifiers, precise location, device identifiers, notifications, private paths, and other sensitive information. Prefer minimal sanitized evidence. If a secret leaks, rotate/revoke it and remove or invalidate exposed artifacts; deleting the text alone is not enough.
-
-Keep issues open until their criteria are implemented and verified. Work on only the issue explicitly selected; use focused branches and review/testing before integration. README is an index, not a technical discussion or proof of completion.
+- [#30 — Branch review and reconciliation](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/30)
