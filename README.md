@@ -81,18 +81,19 @@ The distribution branches, `release/fdroid` and `release/playstore`, are for dis
 
 ## Branch synchronization and integration policy
 
-**`main` is the source of truth.** Feature branches are short-lived workspaces, not independent long-term lines of development. They may differ while work is in progress, but they must be brought back into alignment regularly.
+**`main` and `develop` are a synchronized pair, not separate development lines.** They must contain the same shared commits and have identical tree contents after every integration. `main` is the stable integration baseline; `develop` is its synchronized counterpart. Do not merge unrelated work independently into only one of these branches.
 
 ### Required workflow for every feature branch
 
-1. **Start from current `main`.** Before integrating or continuing substantial feature work, merge the latest `main` into that feature branch.
-2. **Preserve both sides.** Resolve merge conflicts by understanding the intent of each change. Do not blindly choose `main` or the feature branch, discard working behaviour, or replace one implementation with another merely to silence a conflict. Keep both intended changes and add or update tests where their interaction requires it.
-3. **Run that branch's independent CI checks.** Run all checks assigned to that branch and let them report independently. A failure in one job must not prevent unrelated jobs from running or hide their results. Fix real failures; do not weaken assertions, disable checks, add broad suppressions, or create baselines to obtain a green result.
-4. **Verify before integration.** Review the diff, confirm the intended behaviour is retained, and require the relevant CI checks to pass. Do not merge an unverified feature branch into `main`.
-5. **Merge feature branch into `main`.** Once verified, integrate it and confirm the resulting `main` build/checks.
-6. **Repeat from the newly updated `main`.** Before integrating the next feature branch, merge that latest `main` back into it, resolve conflicts while preserving intent, run its checks, and only then integrate it.
+1. **Start from current `main`.** Feature branches are short-lived workspaces. Before substantial work or integration, bring the feature branch up to date with `main` using an ordinary merge.
+2. **Preserve both sides.** Resolve conflicts by understanding the intent of each change. Never blindly choose one side or discard working behaviour merely to silence a conflict.
+3. **Run independent CI checks.** Keep unit tests, Detekt, Android lint, APK build, and any applicable emulator tests as independent jobs so one failure does not hide unrelated results. Fix real failures; do not weaken assertions, disable checks, or add blanket suppressions.
+4. **Verify before integration.** Review the complete diff, confirm intended behaviour and relevant tests, and require applicable CI checks to pass.
+5. **Integrate with a merge commit.** Merge the verified feature branch into `main` using a normal merge commit so the original commit history remains visible. Do not squash a multi-commit feature merely for convenience. Squash only when the source branch genuinely contains disposable, redundant history and that choice is explicitly justified.
+6. **Synchronize `develop`.** After `main` advances, fast-forward `develop` to the exact same commit. If `develop` ever contains a legitimate shared commit absent from `main`, integrate it into `main` with a normal merge first, then synchronize both refs.
+7. **Verify both shared branches.** Confirm `main` and `develop` have identical commit heads and tree contents, and verify checks on the resulting commit.
 
-Keep branches synchronized frequently. Do not allow a branch to accumulate a large behind-count or drift for weeks. If two branches touch the same code, coordinate their order and reconcile them early. Branch-specific CI scope may differ where intentional (for example, a unit-test branch need not run emulator UI tests), but the checks that do apply must remain independent.
+Keep feature branches short-lived and synchronize them frequently. Reconcile branches touching the same files early. Distribution branches `release/fdroid` and `release/playstore` retain only their necessary distribution-specific differences while receiving shared changes through reviewed, history-preserving merges. Do not force-push, rewrite published history, delete branches containing unmerged work, or merge unverified changes.
 
 ### Integration queue snapshot — 17 November 2026
 
