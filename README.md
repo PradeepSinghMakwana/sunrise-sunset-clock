@@ -3,8 +3,8 @@
 A native Android home-screen widget featuring:
 
 - A live digital clock that follows the device's local time zone.
-- Daily sunrise and sunset calculated from the device's approximate location.
-- Approximate location permission only (`ACCESS_COARSE_LOCATION`).
+- Daily sunrise and sunset calculated from coordinates obtained from Android location services or entered manually.
+- Location is never guessed from an IP address, ISP, country, region, or city.
 - Offline solar-time calculation; no API key or external location service is required.
 
 Built with ChatGPT, guided by the repository owner.
@@ -40,17 +40,21 @@ gradle :app:assembleDebug
 ## Setup
 
 1. Open Sunrise Sunset Clock.
-2. Allow approximate location when Android asks.
-3. Keep the app open briefly while it obtains a location fix.
+2. Choose **Use device location** and grant the requested Android location permission, or choose **Enter coordinates manually** and provide latitude and longitude.
+3. If Android cannot provide a location and no coordinates have been entered, the app asks you to enter coordinates. It never substitutes guessed coordinates.
 4. Add the Sunrise Sunset Clock widget from your launcher's Widgets screen.
 
 Tap the widget to reopen setup.
+
+### Location policy (both editions)
+
+The F-Droid and Google Play editions use the same two location methods: Android's location services (which may use GNSS/GPS, Wi-Fi, or cellular-assisted positioning when available) or manual latitude/longitude entry. The app does not infer coordinates from an IP address, ISP, country, region, or city. It does not offer typed address/city search, geocoding, reverse geocoding, or an external maps/location lookup service. If Android cannot provide a location and the user has not entered coordinates, the app asks the user to enter them rather than guessing.
 
 ## Privacy
 
 See the full [Privacy Policy](docs/PRIVACY_POLICY.md).
 
-**F-Droid edition:** it has no `INTERNET` permission, no advertising SDK, and no network-based data collection. It does not send location, device identifiers, analytics, crash data, bug reports, screenshots, logs, or diagnostics to the developer or any server. There is no report-submission feature. It disables Android cloud backup and device-transfer backup so its locally stored location is not included in app backups. Approximate location is used only on-device for offline sunrise/sunset calculations.
+**F-Droid edition:** it has no `INTERNET` permission, no advertising SDK, and no network-based data collection. It does not send location, device identifiers, analytics, crash data, bug reports, screenshots, logs, or diagnostics to the developer or any server. There is no report-submission feature. It disables Android cloud backup and device-transfer backup so its locally stored location is not included in app backups. Coordinates obtained from Android location services or entered manually are used on-device for offline sunrise/sunset calculations. No location is inferred from IP addresses, ISPs, countries, regions, or cities.
 
 **Google Play edition:** because it is ad-supported, it will need network access for its advertising SDK. Its permissions, SDK behavior, privacy policy, and Google Play Data safety disclosures must be assessed and documented separately. The F-Droid privacy guarantees above must not be weakened to accommodate Play advertising.
 
