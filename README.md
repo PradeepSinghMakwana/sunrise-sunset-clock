@@ -109,3 +109,10 @@ The counts below compare each named branch with `main` at the time this section 
 
 **Important:** The queue is not a statement that any branch is already approved to merge. The current PR head, live comparison, conflict state, and latest CI results must be rechecked immediately before every integration. Merge one verified branch at a time, then use the resulting `main` as the base for the next branch.
 
+## Review backlog
+
+- [#2 — Debug build JVM target mismatch](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/2)
+- [#26 — Android 13 screenshot hierarchy timeout](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/26)
+- [#27 — Widget and solar-behavior regression coverage](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/27)
+- [#28 — Emulator CI reliability and diagnostics](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/28)
+- [#30 — Branch review and reconciliation](https://github.com/PradeepSinghMakwana/sunrise-sunset-clock/issues/30)
