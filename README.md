@@ -33,6 +33,14 @@ This is the required order for fixing code-quality issues. Keep the Detekt and A
 
 Tap the widget to reopen setup.
 
+## First-run cartoon guide
+
+Meet the mouse guide: its tail points out where to tap as it narrates the first-run experience and explains how to find, place, and use the home-screen widget.
+
+![Mouse-guided Sunrise Sunset Clock onboarding storyboard](docs/images/onboarding-mouse.jpg)
+
+**Design concept:** this storyboard is an onboarding UX proposal, not a screenshot of the current application. The final in-app narration, pointer/tail animation, highlighted touch targets, and illustrated screens must be aligned with the implemented UI before being presented as an interactive tutorial. The privacy explanation must remain prominent and accurate.
+
 ## Privacy
 The app requests approximate location only. It does not declare or request precise location permission. Coordinates are stored locally on the device and used for the sunrise/sunset calculation.
 
