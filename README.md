@@ -9,6 +9,21 @@ A native Android home-screen widget featuring:
 
 Built with ChatGPT, guided by the repository owner.
 
+## Distribution editions
+
+The project is intended to provide two separately installable Android editions from the same shared codebase. They have different application IDs, so a user can install both editions on one device.
+
+| Edition | Android application ID | Network and monetization |
+|---|---|---|
+| **F-Droid** | `com.sunrisesunset.clock` | No ads, no `INTERNET` permission, and no advertising SDK. The app works offline. |
+| **Google Play** | `com.sunrisesunset.clock.playstore` | Ad-supported. The Play edition will include the advertising SDK and the network permission required to load ads. |
+
+The F-Droid edition is intended to remain privacy-focused and fully offline. Advertising and its network access are confined to the Google Play edition; they must not be added to the F-Droid build.
+
+The two application IDs are deliberate: `com.sunrisesunset.clock` is retained for F-Droid, while `com.sunrisesunset.clock.playstore` identifies the Google Play edition. The Play application ID must be kept stable after the app is first published.
+
+**Implementation status:** this section records the agreed distribution design. The Gradle product flavors, Play advertising integration, and separate release configuration still need to be implemented and verified; do not assume both installable editions are already present in the current APK.
+
 ## Build a debug APK
 
 1. Open the repository's **Actions** tab.
@@ -35,7 +50,9 @@ Tap the widget to reopen setup.
 
 See the full [Privacy Policy](docs/PRIVACY_POLICY.md).
 
-**The app has no network permission and never uploads app data.** It does not send location, device identifiers, analytics, crash data, bug reports, screenshots, logs, or diagnostics to the developer or any server. There is no report-submission feature, and none will be added. The app also disables Android cloud backup and device-transfer backup so its locally stored location is not included in app backups. Approximate location is used only on-device for offline sunrise/sunset calculations.
+**F-Droid edition:** it has no `INTERNET` permission, no advertising SDK, and no network-based data collection. It does not send location, device identifiers, analytics, crash data, bug reports, screenshots, logs, or diagnostics to the developer or any server. There is no report-submission feature. It disables Android cloud backup and device-transfer backup so its locally stored location is not included in app backups. Approximate location is used only on-device for offline sunrise/sunset calculations.
+
+**Google Play edition:** because it is ad-supported, it will need network access for its advertising SDK. Its permissions, SDK behavior, privacy policy, and Google Play Data safety disclosures must be assessed and documented separately. The F-Droid privacy guarantees above must not be weakened to accommodate Play advertising.
 
 ## Solar times and time zones
 
