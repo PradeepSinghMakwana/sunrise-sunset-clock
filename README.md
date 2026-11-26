@@ -71,6 +71,14 @@ Tagged releases use the automated GitHub Actions pipeline. See [Release process]
 
 Push a tag matching the app's `versionName` (for example, `v2.1`) to start a release. The workflow publishes a GitHub Release with the APK, tagged source archive, and audit reports.
 
+## Shared branch and release-branch policy
+
+`main` and `develop` are both long-lived shared development branches and must contain the same shared commits. Shared application code, product requirements, and documentation are committed once and kept in the history of both branches through normal forward integration. Do not maintain separate copies of shared changes or let the two branches become independent development lines.
+
+Use `main` as the stable integration baseline and keep `develop` synchronized with it; when shared work is accepted on either branch, integrate it so the corresponding shared commit is present in both histories. Synchronize by ordinary merge or fast-forward operations only. Never force-push, rewrite published history, or discard commits to make the branches appear aligned.
+
+The distribution branches, `release/fdroid` and `release/playstore`, are for distribution-specific configuration and changes only. They must receive shared changes from the common development history, while retaining their respective F-Droid and Google Play differences. Do not independently reimplement shared requirements on the release branches.
+
 ## Branch synchronization and integration policy
 
 **`main` is the source of truth.** Feature branches are short-lived workspaces, not independent long-term lines of development. They may differ while work is in progress, but they must be brought back into alignment regularly.
